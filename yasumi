@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Yasumi - Zabiegi Antycellulitowe</title>
+  <!-- Czcionka Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --primary-color: #e84c88;  /* kolor główny */
+      --secondary-color: #f7f7f7;/* tło dla sekcji */
+      --accent-silver: #BABFC4;  /* wyróżnik SILVER */
+      --accent-gold: #D4AF37;    /* wyróżnik GOLD */
+      --accent-platinum: #6D6E71;/* wyróżnik PLATINUM */
+      --text-color: #333;
+      --heading-color: #222;
+      --font-main: 'Poppins', sans-serif;
+      --max-width: 1200px;
+    }
+    * {
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box;
+    }
+    body {
+      font-family: var(--font-main);
+      color: var(--text-color);
+      background: #fff;
+      line-height: 1.6;
+    }
+    /* Wyjustowanie akapitów i list */
+    p, li {
+      text-align: justify;
+    }
+
+    /* Domyślne stylowanie obrazów (oprócz hero) */
+    img {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    h1, h2, h3, h4 {
+      color: var(--heading-color);
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    header, main, footer {
+      width: 100%;
+      margin: 0 auto;
+      max-width: var(--max-width);
+      padding: 0 15px;
+    }
+
+    /* ========================== HERO ========================== */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh; /* pełna wysokość ekranu */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      margin-bottom: 40px;
+
+      background:
+        linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+        url('https://cdn.glitch.global/a977893d-30d5-4551-bfdf-78f498ebd109/2aeae05f-ebf6-4788-b960-9bdc32598cc2.image.png?v=1737804838801')
+          center/cover no-repeat;
+      border-radius: 8px;
+    }
+    .hero-content {
+      max-width: 700px;
+      padding: 40px 20px;
+    }
+    .hero-content h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: var(--primary-color);
+      color: #fff;
+      text-decoration: none;
+      padding: 15px 30px;
+      border-radius: 5px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      transition: background 0.3s ease;
+      text-align: center;
+    }
+    .btn-primary:hover {
+      background: #cf3f72;
+    }
+
+    /* ================== ZDJĘCIE #1 MNIEJSZE ================== */
+    .first-image-section {
+      margin: 40px auto;
+      max-width: 700px;
+      text-align: center;
+    }
+
+    /* ================== DLACZEGO WARTO ================== */
+    .section {
+      margin-bottom: 60px;
+    }
+    .section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .why-content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .why-reasons {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin: 30px auto;
+    }
+    .reason-box {
+      background: var(--secondary-color);
+      padding: 20px;
+      border-radius: 8px;
+    }
+    .reason-box h3 {
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--primary-color);
+      text-align: center;
+    }
+    .why-benefits {
+      list-style: none;
+      margin: 20px auto;
+      padding: 0;
+      max-width: 600px;
+    }
+    .why-benefits li {
+      margin-bottom: 8px;
+      position: relative;
+      padding-left: 25px;
+      font-size: 1rem;
+    }
+    .why-benefits li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--primary-color);
+      font-weight: bold;
+    }
+
+    /* ================== TRZY ZABIEGI ================== */
+    .treatments-section {
+      margin-bottom: 60px;
+    }
+    .treatments-section h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 1.8rem;
+    }
+    .treatment-card {
+      background: var(--secondary-color);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 40px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    }
+    .treatment-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 15px;
+      justify-content: center;
+    }
+    .treatment-badge {
+      color: #fff;
+      font-weight: 700;
+      padding: 5px 10px;
+      border-radius: 4px;
+      font-size: 0.9rem;
+    }
+    .badge-silver { background: var(--accent-silver); }
+    .badge-gold { background: var(--accent-gold); }
+    .badge-platinum { background: var(--accent-platinum); }
+    .treatment-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: var(--primary-color);
+      font-weight: 600;
+      text-align: center;
+    }
+    .treatment-points {
+      list-style: none;
+      margin: 0 0 15px 0;
+      padding: 0;
+    }
+    .treatment-points li {
+      margin-bottom: 8px;
+      position: relative;
+      padding-left: 25px;
+    }
+    .treatment-points li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--primary-color);
+      font-weight: bold;
+    }
+    .treatment-box h4 {
+      font-size: 1rem;
+      margin: 20px 0 8px;
+      font-weight: 600;
+    }
+    .treatment-box ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .treatment-box li {
+      margin-bottom: 8px;
+      position: relative;
+      padding-left: 25px;
+    }
+    .treatment-box li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--primary-color);
+      font-weight: bold;
+    }
+    .treatment-footer {
+      margin: 20px 0 10px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      justify-content: center;
+    }
+    .treatment-footer .time,
+    .treatment-footer .price {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 1rem;
+    }
+    .treatment-cta {
+      margin: 15px 0;
+      text-align: center;
+    }
+    .treatment-cta .btn-primary {
+      display: inline-block;
+      background: var(--primary-color);
+      color: #fff;
+      font-weight: 600;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+      text-align: center;
+    }
+    .treatment-cta .btn-primary:hover {
+      background: #cf3f72;
+    }
+
+    /* ================ SEKCJA PRZED/PO (BEFORE/AFTER) ================ */
+    .before-after-section {
+      margin-bottom: 60px;
+    }
+    .before-after-section h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 1.8rem;
+    }
+    .before-after-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto 40px;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .before-img {
+      width: 100%;
+      height: auto;
+      user-select: none;
+      pointer-events: none;
+      display: block;
+      margin: 0 auto;
+    }
+    .after-container {
+      position: absolute;
+      top: 0; 
+      left: 0;
+      width: 0%; 
+      height: 100%;
+      overflow: hidden;
+      transition: width 0.3s ease;
+    }
+    .after-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .slider-container {
+      margin: 0 auto;
+      text-align: center;
+    }
+    .slider-container input[type="range"] {
+      width: 80%;
+      max-width: 600px;
+      margin: 10px auto;
+      display: block;
+      -webkit-appearance: none;
+      background: transparent;
+    }
+    .slider-container input[type="range"]::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 6px;
+      background: #ccc;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    .slider-container input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      height: 20px;
+      width: 20px;
+      background: var(--primary-color);
+      border-radius: 50%;
+      margin-top: -7px; 
+      cursor: pointer;
+      border: 2px solid #fff;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    }
+    .slider-container input[type="range"]::-moz-range-track {
+      width: 100%;
+      height: 6px;
+      background: #ccc;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    .slider-container input[type="range"]::-moz-range-thumb {
+      height: 20px;
+      width: 20px;
+      background: var(--primary-color);
+      border-radius: 50%;
+      border: 2px solid #fff;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+      cursor: pointer;
+    }
+    .caption {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .caption span {
+      display: inline-block;
+      width: 100px;
+      text-transform: uppercase;
+      font-weight: 600;
+      background: #eee;
+      margin: 0 10px;
+      padding: 5px 10px;
+      border-radius: 4px;
+      text-align: center;
+    }
+
+    /* ================ OPINIE KLIENTÓW ================ */
+    .opinie-section {
+      margin: 60px auto;
+      max-width: 800px;
+    }
+    .opinie-section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .opinie-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .opinia-box {
+      background: var(--secondary-color);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+    }
+    .opinia-text {
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+    }
+    .opinia-author {
+      text-align: right;
+      font-weight: 600;
+      font-style: italic;
+    }
+
+    /* ================ CTA ================ */
+    .cta-section {
+      margin-bottom: 60px;
+      text-align: center;
+    }
+    .cta-section .btn-primary {
+      display: inline-block;
+      padding: 15px 30px;
+      background: var(--primary-color);
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+      text-align: center;
+    }
+    .cta-section .btn-primary:hover {
+      background: #cf3f72;
+    }
+
+    /* ================ FORMULARZ (Netlify) ================ */
+    .form-section {
+      margin: 60px auto;
+      max-width: 600px;
+      background: var(--secondary-color);
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .form-section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: var(--heading-color);
+    }
+    form.reservation-form {
+      text-align: left;
+    }
+    form.reservation-form .form-field {
+      margin-bottom: 15px;
+    }
+    form.reservation-form label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+    form.reservation-form input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    .reservation-form button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 15px 30px;
+      background: var(--primary-color);
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      text-align: center;
+    }
+    .reservation-form button:hover {
+      background: #cf3f72;
+    }
+
+    /* ================ O YASUMI ================ */
+    .o-yasumi-section {
+      margin: 60px auto;
+      max-width: 800px;
+      padding: 30px;
+      background: #fef9f9;
+      border-left: 6px solid var(--primary-color);
+      border-radius: 4px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .o-yasumi-section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      text-align: center;
+      color: var(--primary-color);
+    }
+    .o-yasumi-section p {
+      margin-bottom: 15px;
+      text-align: justify;
+    }
+
+    /* ================ STOPKA ================ */
+    footer {
+      text-align: center;
+      margin: 40px 0;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    /* Responsywność */
+    @media (max-width: 992px) {
+      .hero {
+        height: 80vh; /* bywa wygodniej na mobile */
+      }
+      .before-after-wrapper {
+        height: auto;
+      }
+    }
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ======================= HERO ======================= -->
+<header>
+  <div class="hero">
+    <div class="hero-content">
+      <h1>Pogromca Cellulitu – Efekty Już Po Pierwszej Wizycie!</h1>
+      <p>Zredukuj cellulit, wymodeluj sylwetkę i odzyskaj gładką skórę<br>
+         dzięki naszym <strong>innowacyjnym zabiegom antycellulitowym</strong>.</p>
+      <p><strong>💥 Zarezerwuj wizytę teraz i oszczędzaj do 249 zł!</strong><br>
+         <strong>⏰ Oferta limitowana – tylko przez 48 godzin!</strong></p>
+      <a href="#rezerwacja" class="btn-primary">Zarezerwuj Teraz</a>
+    </div>
+  </div>
+</header>
+
+<!-- ================== PIERWSZE ZDJĘCIE (mniesze) ================== -->
+<section class="first-image-section">
+  <img 
+    src="https://cdn.glitch.global/a977893d-30d5-4551-bfdf-78f498ebd109/back-unrecognizable-fleshy-woman-while-touching-her-fat-folds.jpg?v=1737802783406" 
+    alt="Zdjęcie 1"
+  >
+</section>
+
+<main>
+
+  <!-- ======================= DLACZEGO WARTO ======================= -->
+  <section class="section">
+    <h2>Dlaczego warto wybrać nasze zabiegi?</h2>
+    <div class="why-content">
+      <!-- 3 powody -->
+      <div class="why-reasons">
+        <div class="reason-box">
+          <h3>1. Skuteczność potwierdzona przez ekspertów</h3>
+          <p>Wyraźne efekty redukcji cellulitu widoczne już po pierwszej wizycie.</p>
+        </div>
+        <div class="reason-box">
+          <h3>2. Bezpieczna, bezbolesna terapia</h3>
+          <p>Naturalne metody i zaawansowane technologie w jednym.</p>
+        </div>
+        <div class="reason-box">
+          <h3>3. Indywidualne podejście</h3>
+          <p>Każdy zabieg dopasowujemy do Twoich potrzeb i oczekiwań.</p>
+        </div>
+      </div>
+      <ul class="why-benefits">
+        <li>Zredukować cellulit tłuszczowy, wodny i włóknisty.</li>
+        <li>Wymodelować sylwetkę.</li>
+        <li>Poprawić napięcie i elastyczność skóry.</li>
+        <li>Przywrócić pewność siebie!</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ======================= TRZY ZABIEGI ======================= -->
+  <section class="treatments-section">
+    <h2>Trzy Zabiegi, które odmienią Twoją skórę</h2>
+    <!-- Zabieg #1 -->
+    <div class="treatment-card">
+      <!-- kod oferty CelluFree Manual (SILVER) -->
+    </div>
+    <!-- Zabieg #2 -->
+    <div class="treatment-card">
+      <!-- kod oferty Cellulit Stop Therapy (GOLD) -->
+    </div>
+    <!-- Zabieg #3 -->
+    <div class="treatment-card">
+      <!-- kod oferty Cellulit Expert Therapy (PLATINUM) -->
+    </div>
+  </section>
+
+  <!-- ======================= SEKCJA PRZED/PO ======================= -->
+  <section class="before-after-section">
+    <h2>Efekty Zabiegu: Przed i Po</h2>
+    <p class="caption">
+      <span>Przed</span> / <span>Po</span>
+    </p>
+    <div class="before-after-wrapper" id="beforeAfterBox">
+      <img 
+        src="https://cdn.glitch.global/a977893d-30d5-4551-bfdf-78f498ebd109/left_half.png?v=1737804654548" 
+        alt="Przed" 
+        class="before-img"
+      >
+      <div class="after-container" id="afterContainer">
+        <img 
+          src="https://cdn.glitch.global/a977893d-30d5-4551-bfdf-78f498ebd109/right_half.png?v=1737804652781" 
+          alt="Po" 
+          class="after-img"
+          id="afterImage"
+        >
+      </div>
+    </div>
+    <div class="slider-container">
+      <!-- suwak 0-100 -->
+      <input type="range" id="slider" min="0" max="100" value="0">
+    </div>
+  </section>
+
+  <!-- ========== sekcja highlight np. 70% mniej cellulitu ========== -->
+  <section class="highlight-section">
+    <h2>Nawet 70% mniej widocznego cellulitu już po 1 zabiegu</h2>
+    <p>dzięki przełomowej terapii antycellulitowej Yasumi – bez bólu, bez skalpela, z natychmiastowymi efektami!</p>
+    <p>Nasze innowacyjne zabiegi, takie jak <strong>Cellulit Expert Therapy</strong>, działają na głębsze warstwy skóry, skutecznie redukując cellulit, poprawiając jędrność i modelując sylwetkę. Odkryj, jak łatwo możesz odzyskać gładką i jędrną skórę, bez bólu, inwazyjnych procedur i długiej rekonwalescencji.</p>
+    <p><strong>Zarezerwuj już teraz i poczuj różnicę od pierwszej wizyty!</strong></p>
+    <a href="#rezerwacja" class="btn-primary">Przejdź do rezerwacji</a>
+  </section>
+
+  <!-- ======================= OPINIE KLIENTÓW ======================= -->
+  <section class="opinie-section">
+    <h2>Opinie naszych klientek</h2>
+    <div class="opinie-list">
+      <div class="opinia-box">
+        <div class="opinia-text">
+          „Zabieg przyniósł zaskakująco szybkie efekty, a atmosfera w Yasumi sprawiła, że czułam się jak w SPA!”
+        </div>
+        <div class="opinia-author">– Anna K.</div>
+      </div>
+      <div class="opinia-box">
+        <div class="opinia-text">
+          „Po pierwszej sesji skóra wyraźnie się wygładziła. Najlepsza inwestycja w siebie, polecam gorąco!”
+        </div>
+        <div class="opinia-author">– Marta W.</div>
+      </div>
+      <div class="opinia-box">
+        <div class="opinia-text">
+          „Dzięki terapii antycellulitowej odzyskałam pewność siebie. Profesjonalne podejście i trwałe rezultaty.”
+        </div>
+        <div class="opinia-author">– Katarzyna R.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= CTA ======================= -->
+  <section class="cta-section" id="rezerwacja">
+    <p style="font-size:1.2rem; margin-bottom:20px;">
+      Zarezerwuj swoją wizytę już dziś i pożegnaj cellulit raz na zawsze!
+    </p>
+    <a href="#form-box" class="btn-primary">Przejdź do Formularza Rezerwacji</a>
+  </section>
+
+  <!-- ======================= FORMULARZ (NETLIFY) ======================= -->
+  <section class="form-section" id="form-box">
+    <h2>Formularz Rezerwacji</h2>
+    <!-- Atrybut netlify, name="rezerwacja" -->
+    <form
+      class="reservation-form"
+      name="rezerwacja"
+      netlify
+    >
+      <!-- Ukryte pole do identyfikacji w Netlify (opcjonalne) 
+           <input type="hidden" name="form-name" value="rezerwacja" /> 
+      -->
+
+      <div class="form-field">
+        <label for="name">Imię i nazwisko</label>
+        <input 
+          type="text" 
+          id="name"
+          name="Imię i nazwisko"
+          placeholder="Jan Kowalski"
+          required
+        >
+      </div>
+
+      <div class="form-field">
+        <label for="email">E-mail</label>
+        <input
+          type="email"
+          id="email"
+          name="E-mail"
+          placeholder="jan.kowalski@example.com"
+          required
+        >
+      </div>
+
+      <div class="form-field">
+        <label for="phone">Numer telefonu</label>
+        <input
+          type="tel"
+          id="phone"
+          name="Numer telefonu"
+          placeholder="123 456 789"
+          required
+        >
+      </div>
+
+      <div class="form-field">
+        <label for="date">Data wizyty</label>
+        <input
+          type="date"
+          id="date"
+          name="Data wizyty"
+          required
+        >
+      </div>
+
+      <div class="form-field">
+        <label for="time">Godzina wizyty</label>
+        <input
+          type="time"
+          id="time"
+          name="Godzina wizyty"
+          required
+        >
+      </div>
+
+      <button type="submit">Wyślij Rezerwację</button>
+      <p style="margin-top:10px; font-size:0.9rem; color:#666;">
+        Po wypełnieniu i wysłaniu, Twoja rezerwacja zostanie zapisana w Netlify Forms.
+      </p>
+    </form>
+  </section>
+
+  <!-- ======================= O YASUMI ======================= -->
+  <section class="o-yasumi-section">
+    <h2>O Yasumi</h2>
+    <p>Yasumi to marka z wieloletnim doświadczeniem w branży beauty i spa, stawiająca na najnowsze rozwiązania technologiczne i sprawdzone metody pielęgnacji. Naszą misją jest dostarczać klientom skutecznych i bezpiecznych zabiegów, które realnie poprawiają wygląd i samopoczucie.</p>
+    <p>W naszych gabinetach pracują wykwalifikowani eksperci, którzy służą fachową wiedzą i indywidualnym podejściem. Dzięki temu każdy zabieg jest dostosowany do potrzeb konkretnej osoby, co przekłada się na szybko widoczne i trwałe rezultaty.</p>
+    <p>Wybierając Yasumi, stawiasz na profesjonalizm i pasję. Od lat pomagamy ludziom zyskać pewność siebie i lepsze samopoczucie, wykorzystując zarówno innowacje technologiczne, jak i moc natury w pielęgnacji skóry.</p>
+  </section>
+
+</main>
+
+<footer>
+  <p>&copy; 2025 Yasumi. Wszelkie prawa zastrzeżone.</p>
+</footer>
+
+<!-- SUWAK PRZED/PO (zablokowany na 0 lub 100) -->
+<script>
+  const slider = document.getElementById('slider');
+  const afterContainer = document.getElementById('afterContainer');
+
+  // Po zwolnieniu suwaka => przenosimy na skrajną wartość
+  slider.addEventListener('change', function() {
+    let val = parseInt(this.value, 10);
+    if (val < 50) {
+      val = 0;
+    } else {
+      val = 100;
+    }
+    this.value = val;
+    afterContainer.style.width = val + '%';
+  });
+
+  // W trakcie przesuwania => podgląd
+  slider.addEventListener('input', function() {
+    let val = parseInt(this.value, 10);
+    afterContainer.style.width = val + '%';
+  });
+</script>
+
+</body>
+</html>
