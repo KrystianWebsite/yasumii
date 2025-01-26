@@ -2,20 +2,19 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>Yasumi - Zabiegi Antycellulitowe</title>
-  <!-- Przykładowa czcionka Google -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" 
     rel="stylesheet"
   />
 
   <style>
     :root {
-      --primary-color: #e84c88; /* kolor główny */
-      --secondary-color: #f7f7f7; /* tło dla sekcji */
+      --primary-color: #e84c88;
+      --secondary-color: #f7f7f7;
       --accent-silver: #BABFC4;
       --accent-gold: #D4AF37;
       --accent-platinum: #6D6E71;
@@ -35,19 +34,15 @@
       background: #fff;
       line-height: 1.6;
     }
-    /* Teksty wyjustowane */
     p, li {
       text-align: justify;
     }
-
-    /* Wszystkie obrazki (poza hero) */
     img {
       display: block;
       margin: 0 auto;
       max-width: 100%;
       height: auto;
     }
-
     a {
       color: inherit;
       text-decoration: none;
@@ -57,7 +52,6 @@
       margin-bottom: 10px;
       font-weight: 700;
     }
-
     header, main, footer {
       width: 100%;
       margin: 0 auto;
@@ -65,11 +59,10 @@
       padding: 0 15px;
     }
 
-    /* ======================= HERO ======================= */
+    /* =========== HERO =========== */
     .hero {
-      position: relative;
       width: 100%;
-      height: 100vh; /* pełny ekran */
+      height: 100vh; 
       display: flex;
       align-items: center;
       justify-content: center;
@@ -77,9 +70,8 @@
       color: #fff;
       margin-bottom: 40px;
       background:
-        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-        url('https://cdn.glitch.global/a977893d-30d5-4551-bfdf-78f498ebd109/2aeae05f-ebf6-4788-b960-9bdc32598cc2.image.png?v=1737804838801')
-          center/cover no-repeat;
+        linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+        url('https://via.placeholder.com/1920x1080') center/cover no-repeat;
       border-radius: 8px;
     }
     .hero-content {
@@ -110,14 +102,14 @@
       background: #cf3f72;
     }
 
-    /* ======================= Pierwsze zdjęcie węższe ======================= */
+    /* =========== Obrazek #1 Węższy =========== */
     .first-image-section {
       margin: 40px auto;
-      max-width: 700px; 
+      max-width: 700px;
       text-align: center;
     }
 
-    /* ======================= Sekcja: Dlaczego Warto ======================= */
+    /* =========== Sekcja "Dlaczego warto" =========== */
     .section {
       margin-bottom: 60px;
     }
@@ -133,7 +125,6 @@
     }
     .why-reasons {
       display: grid;
-      grid-template-columns: 1fr;
       gap: 20px;
       margin: 30px auto;
     }
@@ -162,14 +153,14 @@
       font-size: 1rem;
     }
     .why-benefits li::before {
-      content: '✓';
+      content: "✓";
       position: absolute;
       left: 0;
       color: var(--primary-color);
       font-weight: bold;
     }
 
-    /* ======================= Trzy Zabiegi ======================= */
+    /* =========== Trzy Zabiegi =========== */
     .treatments-section {
       margin-bottom: 60px;
     }
@@ -188,9 +179,9 @@
     .treatment-header {
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 15px;
       margin-bottom: 15px;
-      justify-content: center;
     }
     .treatment-badge {
       color: #fff;
@@ -226,7 +217,7 @@
       padding-left: 25px;
     }
     .treatment-points li::before {
-      content: '•';
+      content: "•";
       position: absolute;
       left: 0;
       color: var(--primary-color);
@@ -248,7 +239,7 @@
       padding-left: 25px;
     }
     .treatment-box li::before {
-      content: '✓';
+      content: "✓";
       position: absolute;
       left: 0;
       color: var(--primary-color);
@@ -259,11 +250,10 @@
       font-weight: 600;
       display: flex;
       align-items: center;
-      gap: 20px;
       justify-content: center;
+      gap: 20px;
     }
-    .treatment-footer .time,
-    .treatment-footer .price {
+    .time, .price {
       display: flex;
       align-items: center;
       gap: 5px;
@@ -274,20 +264,18 @@
       text-align: center;
     }
     .treatment-cta .btn-primary {
-      display: inline-block;
       background: var(--primary-color);
       color: #fff;
       font-weight: 600;
       padding: 10px 20px;
       border-radius: 5px;
       transition: background 0.3s ease;
-      text-align: center;
     }
     .treatment-cta .btn-primary:hover {
       background: #cf3f72;
     }
 
-    /* ====================== Sekcja Przed/Po ====================== */
+    /* =========== Sekcja Przed/Po =========== */
     .before-after-section {
       margin-bottom: 60px;
     }
@@ -311,6 +299,7 @@
       user-select: none; 
       pointer-events: none;
       display: block;
+      margin: 0 auto;
     }
     .after-container {
       position: absolute;
@@ -396,7 +385,25 @@
       text-align: center;
     }
 
-    /* ======================= OPINIE KLIENTÓW ======================= */
+    /* =========== Highlight (np. 70% mniej cellulitu) =========== */
+    .highlight-section {
+      margin-bottom: 60px;
+      background: #ffecec; 
+      border-radius: 8px;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .highlight-section h2 {
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+      color: var(--primary-color);
+    }
+    .highlight-section p {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+    }
+
+    /* =========== Sekcja opinii klientów =========== */
     .opinie-section {
       margin: 60px auto;
       max-width: 800px;
@@ -427,7 +434,7 @@
       font-style: italic;
     }
 
-    /* ======================= CTA ======================= */
+    /* =========== CTA (przycisk do formularza) =========== */
     .cta-section {
       margin-bottom: 60px;
       text-align: center;
@@ -447,7 +454,7 @@
       background: #cf3f72;
     }
 
-    /* ======================= FORMULARZ NETLIFY ======================= */
+    /* =========== Formularz Netlify =========== */
     .form-section {
       margin: 60px auto;
       max-width: 600px;
@@ -460,20 +467,19 @@
     .form-section h2 {
       font-size: 1.8rem;
       margin-bottom: 20px;
-      color: var(--heading-color);
     }
     form.reservation-form {
       text-align: left; 
     }
-    form.reservation-form .form-field {
+    .form-field {
       margin-bottom: 15px;
     }
-    form.reservation-form label {
+    .form-field label {
       display: block;
       margin-bottom: 5px;
       font-weight: 600;
     }
-    form.reservation-form input {
+    .form-field input {
       width: 100%;
       padding: 10px;
       border-radius: 4px;
@@ -498,7 +504,7 @@
       background: #cf3f72;
     }
 
-    /* ======================= O YASUMI ======================= */
+    /* =========== Sekcja "O Yasumi" =========== */
     .o-yasumi-section {
       margin: 60px auto;
       max-width: 800px;
@@ -519,7 +525,7 @@
       text-align: justify;
     }
 
-    /* ======================= STOPKA ======================= */
+    /* =========== Stopka =========== */
     footer {
       text-align: center;
       margin: 40px 0;
@@ -527,13 +533,13 @@
       color: #777;
     }
 
-    /* RESPONSYWNOŚĆ */
+    /* =========== Responsywność =========== */
     @media (max-width: 992px) {
       .hero {
-        height: 80vh; /* dla bezpieczeństwa na mobile */
+        height: 80vh; 
       }
       .before-after-wrapper {
-        height: auto; 
+        height: auto;
       }
     }
     @media (max-width: 768px) {
@@ -545,7 +551,7 @@
 </head>
 <body>
 
-<!-- ======================= HERO ======================= -->
+<!-- =========== HERO =========== -->
 <header>
   <div class="hero">
     <div class="hero-content">
@@ -559,16 +565,13 @@
   </div>
 </header>
 
-<!-- ======================= ZDJĘCIE MNIEJSZE ======================= -->
+<!-- =========== ZDJĘCIE 1 (MNIEJSZE) =========== -->
 <section class="first-image-section">
-  <img 
-    src="https://cdn.glitch.global/a977893d-30d5-4551-bfdf-78f498ebd109/back-unrecognizable-fleshy-woman-while-touching-her-fat-folds.jpg?v=1737802783406" 
-    alt="Zdjęcie 1"
-  >
+  <img src="https://via.placeholder.com/700x400" alt="Zdjęcie 1" />
 </section>
 
 <main>
-  <!-- ======================= DLACZEGO WARTO ======================= -->
+  <!-- =========== DLACZEGO WARTO =========== -->
   <section class="section">
     <h2>Dlaczego warto wybrać nasze zabiegi?</h2>
     <div class="why-content">
@@ -595,13 +598,13 @@
     </div>
   </section>
 
-  <!-- ======================= TRZY ZABIEGI ======================= -->
+  <!-- =========== TRZY ZABIEGI =========== -->
   <section class="treatments-section">
     <h2>Trzy Zabiegi, które odmienią Twoją skórę</h2>
-    <!-- Tutaj wstaw karty zabiegów SILVER, GOLD, PLATINUM -->
+    <!-- ...Kod zabiegów SILVER, GOLD, PLATINUM... -->
   </section>
 
-  <!-- ======================= SEKCJA PRZED/PO ======================= -->
+  <!-- =========== SEKCJA PRZED/PO =========== -->
   <section class="before-after-section">
     <h2>Efekty Zabiegu: Przed i Po</h2>
     <p class="caption">
@@ -609,16 +612,15 @@
     </p>
     <div class="before-after-wrapper" id="beforeAfterBox">
       <img 
-        src="https://cdn.glitch.global/a977893d-30d5-4551-bfdf-78f498ebd109/left_half.png?v=1737804654548" 
+        src="https://via.placeholder.com/800x400/cccccc/ffffff?text=PRZED" 
         alt="Przed" 
         class="before-img"
       >
       <div class="after-container" id="afterContainer">
         <img 
-          src="https://cdn.glitch.global/a977893d-30d5-4551-bfdf-78f498ebd109/right_half.png?v=1737804652781" 
+          src="https://via.placeholder.com/800x400/999999/ffffff?text=PO" 
           alt="Po" 
           class="after-img"
-          id="afterImage"
         >
       </div>
     </div>
@@ -627,7 +629,16 @@
     </div>
   </section>
 
-  <!-- ======================= OPINIE KLIENTÓW ======================= -->
+  <!-- =========== Sekcja "Highlight" =========== -->
+  <section class="highlight-section">
+    <h2>Nawet 70% mniej widocznego cellulitu już po 1 zabiegu</h2>
+    <p>dzięki przełomowej terapii antycellulitowej Yasumi – bez bólu, bez skalpela, z natychmiastowymi efektami!</p>
+    <p>Nasze innowacyjne zabiegi, takie jak <strong>Cellulit Expert Therapy</strong>, działają na głębsze warstwy skóry, skutecznie redukując cellulit, poprawiając jędrność i modelując sylwetkę. Odkryj, jak łatwo możesz odzyskać gładką i jędrną skórę, bez bólu, inwazyjnych procedur i długiej rekonwalescencji.</p>
+    <p><strong>Zarezerwuj już teraz i poczuj różnicę od pierwszej wizyty!</strong></p>
+    <a href="#rezerwacja" class="btn-primary">Przejdź do rezerwacji</a>
+  </section>
+
+  <!-- =========== OPINIE KLIENTÓW =========== -->
   <section class="opinie-section">
     <h2>Opinie naszych klientek</h2>
     <div class="opinie-list">
@@ -652,7 +663,7 @@
     </div>
   </section>
 
-  <!-- ======================= CTA DO FORMULARZA ======================= -->
+  <!-- =========== CTA DO FORMULARZA =========== -->
   <section class="cta-section" id="rezerwacja">
     <p style="font-size:1.2rem; margin-bottom:20px;">
       Zarezerwuj swoją wizytę już dziś i pożegnaj cellulit raz na zawsze!
@@ -660,99 +671,56 @@
     <a href="#form-box" class="btn-primary">Przejdź do Formularza Rezerwacji</a>
   </section>
 
-  <!-- ======================= FORMULARZ REZERWACJI - Netlify ======================= -->
+  <!-- =========== FORMULARZ NETLIFY =========== -->
   <section class="form-section" id="form-box">
     <h2>Formularz Rezerwacji</h2>
-    <!-- Ustawienia Netlify Forms: name="rezerwacja", method="POST", data-netlify="true" -->
-    <form 
-      class="reservation-form"
-      name="rezerwacja"
-      method="POST"
-      data-netlify="true"
-    >
-      <!-- Ukryte pole identyfikujące formularz (zalecane) -->
-      <input type="hidden" name="form-name" value="rezerwacja" />
-
-      <div class="form-field">
+    <!-- kluczowe: name="rezerwacja" i netlify -->
+    <form name="rezerwacja" class="reservation-form" method="POST" netlify>
+      <p class="form-field">
         <label for="name">Imię i nazwisko</label>
-        <input 
-          type="text" 
-          id="name" 
-          name="Imię i nazwisko" 
-          placeholder="Jan Kowalski" 
-          required
-        >
-      </div>
-
-      <div class="form-field">
+        <input type="text" id="name" name="Imię i nazwisko" required />
+      </p>
+      <p class="form-field">
         <label for="email">E-mail</label>
-        <input 
-          type="email" 
-          id="email" 
-          name="E-mail" 
-          placeholder="jan.kowalski@example.com" 
-          required
-        >
-      </div>
-
-      <div class="form-field">
+        <input type="email" id="email" name="E-mail" required />
+      </p>
+      <p class="form-field">
         <label for="phone">Numer telefonu</label>
-        <input 
-          type="tel" 
-          id="phone" 
-          name="Numer telefonu" 
-          placeholder="123 456 789" 
-          required
-        >
-      </div>
-
-      <div class="form-field">
+        <input type="tel" id="phone" name="Numer telefonu" required />
+      </p>
+      <p class="form-field">
         <label for="date">Data wizyty</label>
-        <input 
-          type="date" 
-          id="date" 
-          name="Data wizyty" 
-          required
-        >
-      </div>
-
-      <div class="form-field">
+        <input type="date" id="date" name="Data wizyty" required />
+      </p>
+      <p class="form-field">
         <label for="time">Godzina wizyty</label>
-        <input 
-          type="time" 
-          id="time" 
-          name="Godzina wizyty" 
-          required
-        >
-      </div>
-
-      <button type="submit">Wyślij Rezerwację</button>
-      <p style="margin-top:10px; font-size:0.9rem; color:#666;">
-        *Po wysłaniu dane zostaną zapisane w Netlify Forms.
+        <input type="time" id="time" name="Godzina wizyty" required />
+      </p>
+      <p>
+        <button type="submit">Wyślij Rezerwację</button>
       </p>
     </form>
   </section>
 
-  <!-- ======================= SEKCJA O YASUMI ======================= -->
+  <!-- =========== O YASUMI =========== -->
   <section class="o-yasumi-section">
     <h2>O Yasumi</h2>
     <p>Yasumi to marka z wieloletnim doświadczeniem w branży beauty i spa, stawiająca na najnowsze rozwiązania technologiczne i sprawdzone metody pielęgnacji. Naszą misją jest dostarczać klientom skutecznych i bezpiecznych zabiegów, które realnie poprawiają wygląd i samopoczucie.</p>
     <p>W naszych gabinetach pracują wykwalifikowani eksperci, którzy służą fachową wiedzą i indywidualnym podejściem. Dzięki temu każdy zabieg jest dostosowany do potrzeb konkretnej osoby, co przekłada się na szybko widoczne i trwałe rezultaty.</p>
     <p>Wybierając Yasumi, stawiasz na profesjonalizm i pasję. Od lat pomagamy ludziom zyskać pewność siebie i lepsze samopoczucie, wykorzystując zarówno innowacje technologiczne, jak i moc natury w pielęgnacji skóry.</p>
   </section>
-
 </main>
 
 <footer>
   <p>&copy; 2025 Yasumi. Wszelkie prawa zastrzeżone.</p>
 </footer>
 
-<!-- ====== Skrypt suwaka PRZED/PO (tylko 0% i 100%) ====== -->
+<!-- =========== SKRYPT SUWAKA PRZED/PO (tylko 0% i 100%) =========== -->
 <script>
   const slider = document.getElementById('slider');
   const afterContainer = document.getElementById('afterContainer');
 
-  // Po zwolnieniu suwaka => 0 lub 100
+  // Po zwolnieniu suwaka => skrajne wartości
   slider.addEventListener('change', function() {
     let val = parseInt(this.value, 10);
     if (val < 50) {
@@ -764,7 +732,7 @@
     afterContainer.style.width = val + '%';
   });
 
-  // W trakcie przesuwania => płynne przejście
+  // Podczas przesuwania => płynne przejście
   slider.addEventListener('input', function() {
     let val = parseInt(this.value, 10);
     afterContainer.style.width = val + '%';
