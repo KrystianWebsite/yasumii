@@ -13,8 +13,8 @@
 
   <style>
     :root {
-      --primary-color: #e84c88;        /* główny kolor */
-      --secondary-color: #f7f7f7;      /* tło sekcji */
+      --primary-color: #e84c88;      
+      --secondary-color: #f7f7f7;     
       --accent-silver: #BABFC4;
       --accent-gold: #D4AF37;
       --accent-platinum: #6D6E71;
@@ -77,18 +77,16 @@
       max-width: 700px;
       padding: 40px 20px;
     }
-    /* Tylko pierwszy nagłówek (h1) w hero ma być złoty */
     .hero-content h1 {
       font-size: 2rem;
       margin-bottom: 20px;
-      color: #FFD700; /* złoto */
+      color: #FFD700;  /* Złoty */
       text-shadow: 1px 1px 2px #000;
     }
-    /* Pozostałe paragrafy w hero - białe */
     .hero-content p {
       font-size: 1.2rem;
       margin-bottom: 15px;
-      color: #fff; /* białe */
+      color: #fff; 
       text-shadow: 1px 1px 2px #000;
     }
     .btn-primary {
@@ -204,8 +202,6 @@
     .badge-platinum {
       background: var(--accent-platinum);
     }
-
-    /* Nazwa zabiegów w kolorach akcentu */
     .treatment-name-silver {
       color: var(--accent-silver);
     }
@@ -215,7 +211,6 @@
     .treatment-name-platinum {
       color: var(--accent-platinum);
     }
-
     .treatment-card h3 {
       font-size: 1.2rem;
       margin-bottom: 10px;
@@ -344,13 +339,6 @@
       display: block;
       background: transparent;
     }
-    .slider-container input[type="range"]::-webkit-slider-runnable-track {
-      width: 100%;
-      height: 6px;
-      background: #ccc;
-      border-radius: 3px;
-      cursor: pointer;
-    }
 
     /* =========== HIGHLIGHT =========== */
     .highlight-section {
@@ -446,12 +434,15 @@
       margin-bottom: 5px;
       font-weight: 600;
     }
-    .form-field input {
+    .form-field input,
+    .form-field select {
       width: 100%;
       padding: 10px;
       border-radius: 4px;
       border: 1px solid #ccc;
       box-sizing: border-box;
+      font-size: 1rem;
+      background: #fff;
     }
     .reservation-form button {
       display: inline-block;
@@ -517,9 +508,7 @@
 <header>
   <div class="hero">
     <div class="hero-content">
-      <!-- NAPIS ZŁOTY -->
       <h1>Pogromca Cellulitu – Efekty Już Po Pierwszej Wizycie!</h1>
-      <!-- POZOSTAŁE TEXTY BIAŁE -->
       <p>Zredukuj cellulit, wymodeluj sylwetkę i odzyskaj gładką skórę<br>
          dzięki naszym <strong>innowacyjnym zabiegom antycellulitowym</strong>.</p>
       <p><strong>💥 Zarezerwuj wizytę teraz i oszczędzaj do 249 zł!</strong><br>
@@ -529,7 +518,7 @@
   </div>
 </header>
 
-<!-- =========== ZDJĘCIE #1 MNIEJSZE =========== -->
+<!-- =========== ZDJĘCIE 1 MNIEJSZE =========== -->
 <section class="first-image-section">
   <img 
     src="https://res.cloudinary.com/dfbadk2ch/image/upload/v1737899855/zdjecie%20y/alixw0jrlpmzd2c8inuz.jpg" 
@@ -538,8 +527,7 @@
 </section>
 
 <main>
-
-  <!-- =========== SEK. DLACZEGO WARTO? =========== -->
+  <!-- =========== DLACZEGO WARTO? =========== -->
   <section class="section">
     <h2>Dlaczego warto wybrać nasze zabiegi?</h2>
     <div class="why-content">
@@ -570,7 +558,7 @@
     </div>
   </section>
 
-  <!-- =========== 3 ZABIEGI =========== -->
+  <!-- =========== TRZY ZABIEGI =========== -->
   <section class="treatments-section">
     <h2>Trzy Zabiegi, które odmienią Twoją skórę</h2>
 
@@ -578,7 +566,6 @@
     <div class="treatment-card">
       <div class="treatment-header">
         <span class="treatment-badge badge-silver">SILVER</span>
-        <!-- Kolor nazwy: srebrny -->
         <h3 class="treatment-name-silver">1. CelluFree Manual – Naturalny Pogromca Cellulitu</h3>
       </div>
       <ul class="treatment-points">
@@ -609,7 +596,6 @@
     <div class="treatment-card">
       <div class="treatment-header">
         <span class="treatment-badge badge-gold">GOLD</span>
-        <!-- Kolor nazwy: złoty -->
         <h3 class="treatment-name-gold">2. Cellulit Stop Therapy – Kompleksowe Działanie 2w1</h3>
       </div>
       <p>Odkryj efektywne połączenie manualnego masażu antycellulitowego i masażu wałkiem drewnianym. To innowacyjna terapia, która:</p>
@@ -641,7 +627,6 @@
     <div class="treatment-card">
       <div class="treatment-header">
         <span class="treatment-badge badge-platinum">PLATINUM</span>
-        <!-- Kolor nazwy: platynowy -->
         <h3 class="treatment-name-platinum">3. Cellulit Expert Therapy – Najskuteczniejsza Terapia 3w1</h3>
       </div>
       <p>Poznaj najbardziej zaawansowaną terapię antycellulitową, która łączy:</p>
@@ -669,7 +654,7 @@
     </div>
   </section>
 
-  <!-- =========== SEKCJA PRZED/PO =========== -->
+  <!-- =========== PRZED/PO =========== -->
   <section class="before-after-section">
     <h2>Efekty Zabiegu: Przed i Po</h2>
     <p class="caption">
@@ -677,13 +662,13 @@
     </p>
     <div class="before-after-wrapper" id="beforeAfterBox">
       <img 
-        src="https://res.cloudinary.com/dfbadk2ch/image/upload/v1737968659/juouendazuutrnpfi91o.jpg?text=PRZED" 
+        src="https://via.placeholder.com/800x400/cccccc/ffffff?text=PRZED" 
         alt="Przed" 
         class="before-img"
       >
       <div class="after-container" id="afterContainer">
         <img 
-          src="https://res.cloudinary.com/dfbadk2ch/image/upload/v1737968659/k5aicb7zc6cpzrxonboa.jpg?text=PO" 
+          src="https://via.placeholder.com/800x400/999999/ffffff?text=PO" 
           alt="Po" 
           class="after-img"
         >
@@ -740,26 +725,43 @@
   <section class="form-section" id="form-box">
     <h2>Formularz Rezerwacji</h2>
     <form name="rezerwacja" class="reservation-form" method="POST" netlify>
+      <!-- Pola standardowe: Imię i nazwisko, E-mail, Telefon, Data, Godzina -->
       <p class="form-field">
         <label for="name">Imię i nazwisko</label>
         <input type="text" id="name" name="Imię i nazwisko" required />
       </p>
+
       <p class="form-field">
         <label for="email">E-mail</label>
         <input type="email" id="email" name="E-mail" required />
       </p>
+
       <p class="form-field">
         <label for="phone">Numer telefonu</label>
         <input type="tel" id="phone" name="Numer telefonu" required />
       </p>
+
       <p class="form-field">
         <label for="date">Data wizyty</label>
         <input type="date" id="date" name="Data wizyty" required />
       </p>
+
       <p class="form-field">
         <label for="time">Godzina wizyty</label>
         <input type="time" id="time" name="Godzina wizyty" required />
       </p>
+
+      <!-- NOWE POLE: WYBÓR ZABIEGU W FORMIE SELECT -->
+      <p class="form-field">
+        <label for="treatmentSelect">Wybór zabiegu</label>
+        <select id="treatmentSelect" name="Wybór zabiegu" required>
+          <option value="">--Wybierz zabieg--</option>
+          <option value="CelluFree Manual">CelluFree Manual</option>
+          <option value="Cellulit Stop Therapy">Cellulit Stop Therapy</option>
+          <option value="Cellulit Expert Therapy">Cellulit Expert Therapy</option>
+        </select>
+      </p>
+
       <p>
         <button type="submit">Wyślij Rezerwację</button>
       </p>
@@ -779,7 +781,7 @@
   <p>&copy; 2025 Yasumi. Wszelkie prawa zastrzeżone.</p>
 </footer>
 
-<!-- =========== SKRYPT SUWAKA PRZED/PO (0% lub 100%) =========== -->
+<!-- =========== SKRYPT SUWAKA PRZED/PO (tylko 0% i 100%) =========== -->
 <script>
   const slider = document.getElementById('slider');
   const afterContainer = document.getElementById('afterContainer');
@@ -803,5 +805,3 @@
 
 </body>
 </html>
-
-
