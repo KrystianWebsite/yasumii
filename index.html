@@ -48,9 +48,9 @@
       text-decoration: none;
     }
     h1, h2, h3, h4 {
-      color: var(--heading-color);
       margin-bottom: 10px;
       font-weight: 700;
+      color: var(--heading-color);
     }
     header, main, footer {
       width: 100%;
@@ -68,7 +68,6 @@
       justify-content: center;
       text-align: center;
       margin-bottom: 40px;
-      color: #fff;
       background:
         linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
         url('https://res.cloudinary.com/dfbadk2ch/image/upload/v1737900180/gprlhum3g5xvki49uhse.webp') center/cover no-repeat;
@@ -78,19 +77,19 @@
       max-width: 700px;
       padding: 40px 20px;
     }
-    /* Kolor wyróżniający się na tle obrazu */
-    .hero-content h1,
-    .hero-content p {
-      color: #FFD700; /* jaskrawy żółty/gold */
-      text-shadow: 1px 1px 2px #000;
-    }
+    /* Tylko pierwszy nagłówek (h1) w hero ma być złoty */
     .hero-content h1 {
       font-size: 2rem;
       margin-bottom: 20px;
+      color: #FFD700; /* złoto */
+      text-shadow: 1px 1px 2px #000;
     }
+    /* Pozostałe paragrafy w hero - białe */
     .hero-content p {
       font-size: 1.2rem;
       margin-bottom: 15px;
+      color: #fff; /* białe */
+      text-shadow: 1px 1px 2px #000;
     }
     .btn-primary {
       display: inline-block;
@@ -205,10 +204,21 @@
     .badge-platinum {
       background: var(--accent-platinum);
     }
+
+    /* Nazwa zabiegów w kolorach akcentu */
+    .treatment-name-silver {
+      color: var(--accent-silver);
+    }
+    .treatment-name-gold {
+      color: var(--accent-gold);
+    }
+    .treatment-name-platinum {
+      color: var(--accent-platinum);
+    }
+
     .treatment-card h3 {
       font-size: 1.2rem;
       margin-bottom: 10px;
-      color: var(--primary-color);
       font-weight: 600;
       text-align: center;
     }
@@ -311,7 +321,7 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 0%; 
+      width: 0%;
       height: 100%;
       overflow: hidden;
       transition: width 0.3s ease;
@@ -341,19 +351,8 @@
       border-radius: 3px;
       cursor: pointer;
     }
-    .slider-container input[type="range"]::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      height: 20px;
-      width: 20px;
-      background: var(--primary-color);
-      border-radius: 50%;
-      margin-top: -7px; 
-      cursor: pointer;
-      border: 2px solid #fff;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.3);
-    }
 
-    /* =========== Sekcja highlight 70% mniej cellulitu =========== */
+    /* =========== HIGHLIGHT =========== */
     .highlight-section {
       margin-bottom: 60px;
       background: #ffecec; 
@@ -371,7 +370,7 @@
       margin-bottom: 15px;
     }
 
-    /* =========== Sekcja opinii klientów =========== */
+    /* =========== OPINIE KLIENTÓW =========== */
     .opinie-section {
       margin: 60px auto;
       max-width: 800px;
@@ -422,7 +421,7 @@
       background: #cf3f72;
     }
 
-    /* =========== Formularz Netlify =========== */
+    /* =========== FORMULARZ NETLIFY =========== */
     .form-section {
       margin: 60px auto;
       max-width: 600px;
@@ -468,9 +467,6 @@
       transition: background 0.3s ease;
       text-align: center;
     }
-    .reservation-form button:hover {
-      background: #cf3f72;
-    }
 
     /* =========== Sekcja "O Yasumi" =========== */
     .o-yasumi-section {
@@ -493,7 +489,6 @@
       text-align: justify;
     }
 
-    /* =========== Stopka =========== */
     footer {
       text-align: center;
       margin: 40px 0;
@@ -501,10 +496,9 @@
       color: #777;
     }
 
-    /* =========== Responsywność =========== */
     @media (max-width: 992px) {
       .hero {
-        height: 80vh; 
+        height: 80vh;
       }
       .before-after-wrapper {
         height: auto;
@@ -523,7 +517,9 @@
 <header>
   <div class="hero">
     <div class="hero-content">
+      <!-- NAPIS ZŁOTY -->
       <h1>Pogromca Cellulitu – Efekty Już Po Pierwszej Wizycie!</h1>
+      <!-- POZOSTAŁE TEXTY BIAŁE -->
       <p>Zredukuj cellulit, wymodeluj sylwetkę i odzyskaj gładką skórę<br>
          dzięki naszym <strong>innowacyjnym zabiegom antycellulitowym</strong>.</p>
       <p><strong>💥 Zarezerwuj wizytę teraz i oszczędzaj do 249 zł!</strong><br>
@@ -533,7 +529,7 @@
   </div>
 </header>
 
-<!-- =========== ZDJĘCIE 1 (MNIEJSZE) =========== -->
+<!-- =========== ZDJĘCIE #1 MNIEJSZE =========== -->
 <section class="first-image-section">
   <img 
     src="https://res.cloudinary.com/dfbadk2ch/image/upload/v1737899855/zdjecie%20y/alixw0jrlpmzd2c8inuz.jpg" 
@@ -542,7 +538,8 @@
 </section>
 
 <main>
-  <!-- =========== DLACZEGO WARTO =========== -->
+
+  <!-- =========== SEK. DLACZEGO WARTO? =========== -->
   <section class="section">
     <h2>Dlaczego warto wybrać nasze zabiegi?</h2>
     <div class="why-content">
@@ -561,7 +558,6 @@
         </div>
       </div>
 
-      <!-- Dodajemy pogrubiony napis przed listą benefitów -->
       <p style="font-weight:600; margin-bottom:10px;">
         Te zabiegi pomogą Ci:
       </p>
@@ -574,15 +570,16 @@
     </div>
   </section>
 
-  <!-- =========== TRZY ZABIEGI (NAPRAWA WYŚWIETLANIA) =========== -->
+  <!-- =========== 3 ZABIEGI =========== -->
   <section class="treatments-section">
     <h2>Trzy Zabiegi, które odmienią Twoją skórę</h2>
 
-    <!-- Zabieg #1: CelluFree Manual (SILVER) -->
+    <!-- Zabieg #1: SILVER -->
     <div class="treatment-card">
       <div class="treatment-header">
         <span class="treatment-badge badge-silver">SILVER</span>
-        <h3>1. CelluFree Manual – Naturalny Pogromca Cellulitu</h3>
+        <!-- Kolor nazwy: srebrny -->
+        <h3 class="treatment-name-silver">1. CelluFree Manual – Naturalny Pogromca Cellulitu</h3>
       </div>
       <ul class="treatment-points">
         <li>Pobudza krążenie krwi i limfy, redukując obrzęki.</li>
@@ -608,11 +605,12 @@
       </div>
     </div>
 
-    <!-- Zabieg #2: Cellulit Stop Therapy (GOLD) -->
+    <!-- Zabieg #2: GOLD -->
     <div class="treatment-card">
       <div class="treatment-header">
         <span class="treatment-badge badge-gold">GOLD</span>
-        <h3>2. Cellulit Stop Therapy – Kompleksowe Działanie 2w1</h3>
+        <!-- Kolor nazwy: złoty -->
+        <h3 class="treatment-name-gold">2. Cellulit Stop Therapy – Kompleksowe Działanie 2w1</h3>
       </div>
       <p>Odkryj efektywne połączenie manualnego masażu antycellulitowego i masażu wałkiem drewnianym. To innowacyjna terapia, która:</p>
       <ul class="treatment-points">
@@ -639,21 +637,22 @@
       </div>
     </div>
 
-    <!-- Zabieg #3: Cellulit Expert Therapy (PLATINUM) -->
+    <!-- Zabieg #3: PLATINUM -->
     <div class="treatment-card">
       <div class="treatment-header">
         <span class="treatment-badge badge-platinum">PLATINUM</span>
-        <h3>3. Cellulit Expert Therapy – Najskuteczniejsza Terapia 3w1</h3>
+        <!-- Kolor nazwy: platynowy -->
+        <h3 class="treatment-name-platinum">3. Cellulit Expert Therapy – Najskuteczniejsza Terapia 3w1</h3>
       </div>
       <p>Poznaj najbardziej zaawansowaną terapię antycellulitową, która łączy:</p>
       <ul class="treatment-points">
-        <li><strong>Manualny masaż antycellulitowy</strong> – pobudza krążenie i eliminuje toksyny.</li>
-        <li><strong>Technologie LIPOZERO</strong> – precyzyjne modelowanie sylwetki (RF i LED).</li>
-        <li><strong>Bandaże ZeroCell Bandage</strong> – intensywnie redukują cellulit i ujędrniają skórę.</li>
+        <li>Manualny masaż antycellulitowy – pobudza krążenie i eliminuje toksyny.</li>
+        <li>Technologie LIPOZERO – precyzyjne modelowanie sylwetki (RF i LED).</li>
+        <li>Bandaże ZeroCell Bandage – intensywnie redukują cellulit i ujędrniają skórę.</li>
       </ul>
       <h4>Dlaczego warto?</h4>
       <ul class="treatment-box">
-        <li>Kompleksowe działanie, które zapewnia maksymalną redukcję cellulitu.</li>
+        <li>Kompleksowe działanie, zapewnia maksymalną redukcję cellulitu.</li>
         <li>Długotrwałe efekty poprawy napięcia i elastyczności skóry.</li>
         <li>Dedykowany osobom szukającym najwyższej skuteczności.</li>
       </ul>
@@ -804,4 +803,5 @@
 
 </body>
 </html>
+
 
