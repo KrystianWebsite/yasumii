@@ -13,8 +13,8 @@
 
   <style>
     :root {
-      --primary-color: #e84c88;
-      --secondary-color: #f7f7f7;
+      --primary-color: #e84c88;        /* główny kolor */
+      --secondary-color: #f7f7f7;      /* tło sekcji */
       --accent-silver: #BABFC4;
       --accent-gold: #D4AF37;
       --accent-platinum: #6D6E71;
@@ -67,8 +67,8 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      color: #fff;
       margin-bottom: 40px;
+      color: #fff;
       background:
         linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
         url('https://res.cloudinary.com/dfbadk2ch/image/upload/v1737900180/gprlhum3g5xvki49uhse.webp') center/cover no-repeat;
@@ -77,6 +77,12 @@
     .hero-content {
       max-width: 700px;
       padding: 40px 20px;
+    }
+    /* Kolor wyróżniający się na tle obrazu */
+    .hero-content h1,
+    .hero-content p {
+      color: #FFD700; /* jaskrawy żółty/gold */
+      text-shadow: 1px 1px 2px #000;
     }
     .hero-content h1 {
       font-size: 2rem;
@@ -102,14 +108,14 @@
       background: #cf3f72;
     }
 
-    /* =========== Obrazek #1 Węższy =========== */
+    /* =========== ZDJĘCIE 1 MNIEJSZE =========== */
     .first-image-section {
       margin: 40px auto;
       max-width: 700px;
       text-align: center;
     }
 
-    /* =========== Sekcja "Dlaczego warto" =========== */
+    /* =========== SEKCJA "DLACZEGO WARTO?" =========== */
     .section {
       margin-bottom: 60px;
     }
@@ -160,7 +166,7 @@
       font-weight: bold;
     }
 
-    /* =========== Trzy Zabiegi =========== */
+    /* =========== TRZY ZABIEGI =========== */
     .treatments-section {
       margin-bottom: 60px;
     }
@@ -275,7 +281,7 @@
       background: #cf3f72;
     }
 
-    /* =========== Sekcja Przed/Po =========== */
+    /* =========== SEKCJA PRZED/PO =========== */
     .before-after-section {
       margin-bottom: 60px;
     }
@@ -346,45 +352,8 @@
       border: 2px solid #fff;
       box-shadow: 0 1px 2px rgba(0,0,0,0.3);
     }
-    .slider-container input[type="range"]::-moz-range-track {
-      width: 100%;
-      height: 6px;
-      background: #ccc;
-      border-radius: 3px;
-      cursor: pointer;
-    }
-    .slider-container input[type="range"]::-moz-range-thumb {
-      height: 20px;
-      width: 20px;
-      background: var(--primary-color);
-      border-radius: 50%;
-      border: 2px solid #fff;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.3);
-      cursor: pointer;
-    }
-    .slider-container input[type="range"]::-ms-track {
-      width: 100%;
-      height: 6px;
-      background: #ccc;
-      cursor: pointer;
-    }
-    .caption {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .caption span {
-      display: inline-block;
-      width: 100px;
-      text-transform: uppercase;
-      font-weight: 600;
-      background: #eee;
-      margin: 0 10px;
-      padding: 5px 10px;
-      border-radius: 4px;
-      text-align: center;
-    }
 
-    /* =========== Highlight (np. 70% mniej cellulitu) =========== */
+    /* =========== Sekcja highlight 70% mniej cellulitu =========== */
     .highlight-section {
       margin-bottom: 60px;
       background: #ffecec; 
@@ -566,7 +535,10 @@
 
 <!-- =========== ZDJĘCIE 1 (MNIEJSZE) =========== -->
 <section class="first-image-section">
-  <img src="https://res.cloudinary.com/dfbadk2ch/image/upload/v1737899855/zdjecie%20y/alixw0jrlpmzd2c8inuz.jpg" alt="Zdjęcie 1" />
+  <img 
+    src="https://res.cloudinary.com/dfbadk2ch/image/upload/v1737899855/zdjecie%20y/alixw0jrlpmzd2c8inuz.jpg" 
+    alt="Zdjęcie 1" 
+  />
 </section>
 
 <main>
@@ -588,6 +560,11 @@
           <p>Każdy zabieg dopasowujemy do Twoich potrzeb i oczekiwań.</p>
         </div>
       </div>
+
+      <!-- Dodajemy pogrubiony napis przed listą benefitów -->
+      <p style="font-weight:600; margin-bottom:10px;">
+        Te zabiegi pomogą Ci:
+      </p>
       <ul class="why-benefits">
         <li>Zredukować cellulit tłuszczowy, wodny i włóknisty.</li>
         <li>Wymodelować sylwetkę.</li>
@@ -597,10 +574,100 @@
     </div>
   </section>
 
-  <!-- =========== TRZY ZABIEGI =========== -->
+  <!-- =========== TRZY ZABIEGI (NAPRAWA WYŚWIETLANIA) =========== -->
   <section class="treatments-section">
     <h2>Trzy Zabiegi, które odmienią Twoją skórę</h2>
-    <!-- ...Kod zabiegów SILVER, GOLD, PLATINUM... -->
+
+    <!-- Zabieg #1: CelluFree Manual (SILVER) -->
+    <div class="treatment-card">
+      <div class="treatment-header">
+        <span class="treatment-badge badge-silver">SILVER</span>
+        <h3>1. CelluFree Manual – Naturalny Pogromca Cellulitu</h3>
+      </div>
+      <ul class="treatment-points">
+        <li>Pobudza krążenie krwi i limfy, redukując obrzęki.</li>
+        <li>Wspomaga usuwanie toksyn i nadmiaru wody z organizmu.</li>
+        <li>Rozbija złogi tłuszczowe, poprawiając strukturę skóry.</li>
+        <li>Przywraca jędrność i gładkość skóry.</li>
+      </ul>
+      <h4>Dlaczego warto?</h4>
+      <ul class="treatment-box">
+        <li>Skuteczna redukcja cellulitu już po pierwszej wizycie.</li>
+        <li>Naturalne metody, bez urządzeń i inwazyjnych technologii.</li>
+        <li>Idealny dla osób szukających bezpiecznego i komfortowego zabiegu.</li>
+      </ul>
+      <div class="treatment-footer">
+        <div class="time">⏳ Czas: <strong>45 minut</strong></div>
+        <div class="price">💰 Cena: <strong>150 zł</strong></div>
+      </div>
+      <p><strong>TERAZ DO Pierwszej Wizyty:</strong><br>
+         ⭐ Konsultacja specjalisty GRATIS. <br>
+         ⭐ Profesjonalne porady dotyczące pielęgnacji domowej GRATIS.</p>
+      <div class="treatment-cta">
+        <a href="#rezerwacja" class="btn-primary">Wybieram CelluFree Manual</a>
+      </div>
+    </div>
+
+    <!-- Zabieg #2: Cellulit Stop Therapy (GOLD) -->
+    <div class="treatment-card">
+      <div class="treatment-header">
+        <span class="treatment-badge badge-gold">GOLD</span>
+        <h3>2. Cellulit Stop Therapy – Kompleksowe Działanie 2w1</h3>
+      </div>
+      <p>Odkryj efektywne połączenie manualnego masażu antycellulitowego i masażu wałkiem drewnianym. To innowacyjna terapia, która:</p>
+      <ul class="treatment-points">
+        <li>Redukuje cellulit wodny, tłuszczowy i włóknisty.</li>
+        <li>Poprawia elastyczność i napięcie skóry.</li>
+        <li>Modeluje sylwetkę, działając głęboko na tkanki.</li>
+        <li>Intensywnie stymuluje krążenie i drenaż limfatyczny.</li>
+      </ul>
+      <h4>Dlaczego warto?</h4>
+      <ul class="treatment-box">
+        <li>Połączenie dwóch zaawansowanych metod w jednym zabiegu.</li>
+        <li>Widoczne efekty w postaci wygładzonej skóry i poprawionego konturu ciała.</li>
+        <li>Zabieg bezbolesny i bezpieczny, odpowiedni dla każdego typu skóry.</li>
+      </ul>
+      <div class="treatment-footer">
+        <div class="time">⏳ Czas: <strong>60 minut</strong></div>
+        <div class="price">💰 Cena: <strong>220 zł</strong></div>
+      </div>
+      <p><strong>TERAZ DO Pierwszej Wizyty:</strong><br>
+         ⭐ Konsultacja specjalisty GRATIS. <br>
+         ⭐ Profesjonalne porady dotyczące pielęgnacji domowej GRATIS.</p>
+      <div class="treatment-cta">
+        <a href="#rezerwacja" class="btn-primary">Wybieram Cellulit Stop Therapy</a>
+      </div>
+    </div>
+
+    <!-- Zabieg #3: Cellulit Expert Therapy (PLATINUM) -->
+    <div class="treatment-card">
+      <div class="treatment-header">
+        <span class="treatment-badge badge-platinum">PLATINUM</span>
+        <h3>3. Cellulit Expert Therapy – Najskuteczniejsza Terapia 3w1</h3>
+      </div>
+      <p>Poznaj najbardziej zaawansowaną terapię antycellulitową, która łączy:</p>
+      <ul class="treatment-points">
+        <li><strong>Manualny masaż antycellulitowy</strong> – pobudza krążenie i eliminuje toksyny.</li>
+        <li><strong>Technologie LIPOZERO</strong> – precyzyjne modelowanie sylwetki (RF i LED).</li>
+        <li><strong>Bandaże ZeroCell Bandage</strong> – intensywnie redukują cellulit i ujędrniają skórę.</li>
+      </ul>
+      <h4>Dlaczego warto?</h4>
+      <ul class="treatment-box">
+        <li>Kompleksowe działanie, które zapewnia maksymalną redukcję cellulitu.</li>
+        <li>Długotrwałe efekty poprawy napięcia i elastyczności skóry.</li>
+        <li>Dedykowany osobom szukającym najwyższej skuteczności.</li>
+      </ul>
+      <div class="treatment-footer">
+        <div class="time">⏳ Czas: <strong>90 minut</strong></div>
+        <div class="price">💰 Cena: <strong>390 zł</strong></div>
+      </div>
+      <p><strong>TERAZ DO Pierwszej Wizyty:</strong><br>
+         ⭐ Konsultacja specjalisty GRATIS. <br>
+         ⭐ Profesjonalne porady dotyczące pielęgnacji domowej GRATIS.</p>
+      <div class="treatment-cta">
+        <a href="#rezerwacja" class="btn-primary">Wybieram Cellulit Expert Therapy</a>
+      </div>
+    </div>
   </section>
 
   <!-- =========== SEKCJA PRZED/PO =========== -->
@@ -628,7 +695,7 @@
     </div>
   </section>
 
-  <!-- =========== Sekcja "Highlight" =========== -->
+  <!-- =========== Sekcja highlight =========== -->
   <section class="highlight-section">
     <h2>Nawet 70% mniej widocznego cellulitu już po 1 zabiegu</h2>
     <p>dzięki przełomowej terapii antycellulitowej Yasumi – bez bólu, bez skalpela, z natychmiastowymi efektami!</p>
@@ -673,7 +740,6 @@
   <!-- =========== FORMULARZ NETLIFY =========== -->
   <section class="form-section" id="form-box">
     <h2>Formularz Rezerwacji</h2>
-    <!-- kluczowe: name="rezerwacja" i netlify -->
     <form name="rezerwacja" class="reservation-form" method="POST" netlify>
       <p class="form-field">
         <label for="name">Imię i nazwisko</label>
@@ -714,12 +780,11 @@
   <p>&copy; 2025 Yasumi. Wszelkie prawa zastrzeżone.</p>
 </footer>
 
-<!-- =========== SKRYPT SUWAKA PRZED/PO (tylko 0% i 100%) =========== -->
+<!-- =========== SKRYPT SUWAKA PRZED/PO (0% lub 100%) =========== -->
 <script>
   const slider = document.getElementById('slider');
   const afterContainer = document.getElementById('afterContainer');
 
-  // Po zwolnieniu suwaka => skrajne wartości
   slider.addEventListener('change', function() {
     let val = parseInt(this.value, 10);
     if (val < 50) {
@@ -731,7 +796,6 @@
     afterContainer.style.width = val + '%';
   });
 
-  // Podczas przesuwania => płynne przejście
   slider.addEventListener('input', function() {
     let val = parseInt(this.value, 10);
     afterContainer.style.width = val + '%';
@@ -740,3 +804,4 @@
 
 </body>
 </html>
+
