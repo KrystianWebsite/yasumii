@@ -178,14 +178,14 @@
       border-radius: 8px;
       padding: 20px;
       margin-bottom: 40px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
     }
     .treatment-header {
       display: flex;
       align-items: center;
-      justify-content: center;
       gap: 15px;
       margin-bottom: 15px;
+      justify-content: center;
     }
     .treatment-badge {
       color: #fff;
@@ -203,24 +203,16 @@
     .badge-platinum {
       background: var(--accent-platinum);
     }
-    .treatment-name-silver {
-      color: var(--accent-silver);
-    }
-    .treatment-name-gold {
-      color: var(--accent-gold);
-    }
-    .treatment-name-platinum {
-      color: var(--accent-platinum);
-    }
     .treatment-card h3 {
       font-size: 1.2rem;
       margin-bottom: 10px;
+      color: var(--primary-color);
       font-weight: 600;
       text-align: center;
     }
     .treatment-points {
       list-style: none;
-      margin: 0 0 15px;
+      margin: 0 0 15px 0;
       padding: 0;
     }
     .treatment-points li {
@@ -229,7 +221,7 @@
       padding-left: 25px;
     }
     .treatment-points li::before {
-      content: "•";
+      content: '•';
       position: absolute;
       left: 0;
       color: var(--primary-color);
@@ -251,7 +243,7 @@
       padding-left: 25px;
     }
     .treatment-box li::before {
-      content: "✓";
+      content: '✓';
       position: absolute;
       left: 0;
       color: var(--primary-color);
@@ -262,10 +254,11 @@
       font-weight: 600;
       display: flex;
       align-items: center;
-      justify-content: center;
       gap: 20px;
+      justify-content: center;
     }
-    .time, .price {
+    .treatment-footer .time,
+    .treatment-footer .price {
       display: flex;
       align-items: center;
       gap: 5px;
@@ -276,6 +269,7 @@
       text-align: center;
     }
     .treatment-cta .btn-primary {
+      display: inline-block;
       background: var(--primary-color);
       color: #fff;
       font-weight: 600;
