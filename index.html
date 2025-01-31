@@ -855,87 +855,60 @@
 <!-- Sekcja karuzeli zdjęć -->
 <section class="carousel-section">
   <h2>Galeria</h2>
-  <div class="carousel-container" id="carouselContainer">
-    <!-- Każdy slajd w oddzielnym divie -->
-    <div class="carousel-slide">
-      <img 
-        src="https://res.cloudinary.com/dfbadk2ch/image/upload/v1737990433/zdjecie%20y/l1gfnuu5tkqlrq4rzuqh.jpg" 
-        alt="Slajd 1" 
-      />
-    </div>
-    <div class="carousel-slide">
-      <img 
-        src="https://res.cloudinary.com/dfbadk2ch/image/upload/v1737990434/zdjecie%20y/i2aon90gzmuyzxizqttm.jpg" 
-        alt="Slajd 2" 
-      />
-    </div>
-    <div class="carousel-slide">
-      <img 
-        src="https://res.cloudinary.com/dfbadk2ch/image/upload/v1737990434/zdjecie%20y/gjbdgxquwkgna4lzfp3m.jpg" 
-        alt="Slajd 3" 
-      />
-    </div>
-    <div class="carousel-slide">
-      <img 
-        src="https://res.cloudinary.com/dfbadk2ch/image/upload/v1737990435/zdjecie%20y/vxdyaer75fn6nyiyof7x.jpg" 
-        alt="Slajd 4" 
-      />
-    </div>
-    <div class="carousel-slide">
-      <img 
-        src="https://res.cloudinary.com/dfbadk2ch/image/upload/v1737990435/zdjecie%20y/h60mmaj5in8gpaetksg6.jpg" 
-        alt="Slajd 5" 
-      />
+  <div class="carousel-container">
+    <div class="carousel-track" id="carouselTrack">
+      <div class="carousel-slide">
+        <img src="https://res.cloudinary.com/dfbadk2ch/image/upload/v1737990433/zdjecie%20y/l1gfnuu5tkqlrq4rzuqh.jpg" alt="Slajd 1" />
+      </div>
+      <div class="carousel-slide">
+        <img src="https://res.cloudinary.com/dfbadk2ch/image/upload/v1737990434/zdjecie%20y/i2aon90gzmuyzxizqttm.jpg" alt="Slajd 2" />
+      </div>
+      <div class="carousel-slide">
+        <img src="https://res.cloudinary.com/dfbadk2ch/image/upload/v1737990434/zdjecie%20y/gjbdgxquwkgna4lzfp3m.jpg" alt="Slajd 3" />
+      </div>
+      <div class="carousel-slide">
+        <img src="https://res.cloudinary.com/dfbadk2ch/image/upload/v1737990435/zdjecie%20y/vxdyaer75fn6nyiyof7x.jpg" alt="Slajd 4" />
+      </div>
+      <div class="carousel-slide">
+        <img src="https://res.cloudinary.com/dfbadk2ch/image/upload/v1737990435/zdjecie%20y/h60mmaj5in8gpaetksg6.jpg" alt="Slajd 5" />
+      </div>
     </div>
   </div>
-
+  
   <!-- Strzałki nawigacji -->
   <button class="carousel-btn prev-btn" id="prevBtn">&#10094;</button>
   <button class="carousel-btn next-btn" id="nextBtn">&#10095;</button>
-
-  <!-- Kropki (dot indicators) -->
-  <div class="carousel-dots" id="carouselDots">
-    <!-- Dynamika w JS, ale można też stworzyć ręcznie 5 spanów -->
-    <!-- <span class="dot active" data-index="0"></span> -->
-    <!-- <span class="dot" data-index="1"></span> -->
-    <!-- ... -->
-  </div>
+  
+  <!-- Kropki nawigacji -->
+  <div class="carousel-dots" id="carouselDots"></div>
 </section>
 
 <style>
   .carousel-section {
     margin: 60px auto;
     max-width: 800px;
-    position: relative; 
     text-align: center;
-  }
-  .carousel-section h2 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-
-  /* Kontener na slajdy (overflow hidden) */
-  .carousel-container {
     position: relative;
+  }
+  .carousel-container {
     width: 100%;
     overflow: hidden;
+    position: relative;
   }
-
-  /* Każdy slajd zajmuje 100% szerokości */
+  .carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
   .carousel-slide {
     min-width: 100%;
     transition: transform 0.5s ease;
-    float: left; /* alternatywny sposób; można też użyć flexa */
   }
   .carousel-slide img {
     width: 100%;
-    height: 400px; /* dopasuj do stylu zdjęć */
+    height: 400px;
     object-fit: cover;
     display: block;
   }
-
-  /* Strzałki (prev/next) */
   .carousel-btn {
     position: absolute;
     top: 50%;
@@ -958,8 +931,6 @@
   .carousel-btn:hover {
     background: rgba(0,0,0,0.6);
   }
-
-  /* Kropki (dot indicators) */
   .carousel-dots {
     margin-top: 15px;
     text-align: center;
@@ -979,6 +950,56 @@
 </style>
 
 <script>
+  const track = document.getElementById('carouselTrack');
+  const slides = document.querySelectorAll('.carousel-slide');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const dotsContainer = document.getElementById('carouselDots');
+
+  let currentIndex = 0;
+  const totalSlides = slides.length;
+
+  // Tworzenie kropek
+  for (let i = 0; i < totalSlides; i++) {
+    const dot = document.createElement('span');
+    dot.classList.add('dot');
+    if (i === 0) dot.classList.add('active');
+    dot.dataset.index = i;
+    dotsContainer.appendChild(dot);
+
+    dot.addEventListener('click', () => {
+      goToSlide(i);
+    });
+  }
+  const allDots = document.querySelectorAll('.dot');
+
+  function goToSlide(index) {
+    if (index < 0) index = totalSlides - 1;
+    if (index >= totalSlides) index = 0;
+
+    currentIndex = index;
+    track.style.transform = `translateX(-${index * 100}%)`;
+
+    allDots.forEach(dot => dot.classList.remove('active'));
+    allDots[currentIndex].classList.add('active');
+  }
+
+  prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
+  nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
+
+  // Automatyczna zmiana slajdów
+  let autoSlide = setInterval(() => {
+    goToSlide(currentIndex + 1);
+  }, 4000);
+
+  track.addEventListener('mouseenter', () => clearInterval(autoSlide));
+  track.addEventListener('mouseleave', () => {
+    autoSlide = setInterval(() => {
+      goToSlide(currentIndex + 1);
+    }, 4000);
+  });
+</script>
+
   //===============================
   //  Karuzela zdjęć w JavaScript
   //===============================
