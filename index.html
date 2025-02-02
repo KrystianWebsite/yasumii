@@ -14,8 +14,8 @@
 
   <style>
     :root {
-      --primary-color: #e84c88;      
-      --secondary-color: #f7f7f7;     
+      --primary-color: #e84c88;
+      --secondary-color: #f7f7f7;
       --accent-silver: #BABFC4;
       --accent-gold: #D4AF37;
       --accent-platinum: #6D6E71;
@@ -24,9 +24,10 @@
       --font-main: 'Poppins', sans-serif;
       --max-width: 1200px;
     }
+
     * {
-      margin: 0; 
-      padding: 0; 
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
     body {
@@ -101,19 +102,20 @@
       font-size: 1.1rem;
       font-weight: 600;
       transition: background 0.3s ease;
+      text-align: center;
     }
     .btn-primary:hover {
       background: #cf3f72;
     }
 
-    /* =========== Pierwsze zdjęcie mniejsze =========== */
+    /* =========== ZDJĘCIE 1 MNIEJSZE =========== */
     .first-image-section {
       margin: 40px auto;
       max-width: 700px;
       text-align: center;
     }
 
-    /* =========== SEKCJA DLACZEGO WARTO? =========== */
+    /* =========== SEKCJA "DLACZEGO WARTO?" =========== */
     .section {
       margin-bottom: 60px;
     }
@@ -170,6 +172,11 @@
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.05);
     }
+    .concerns-section h3 {
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      color: var(--primary-color);
+    }
     .concerns-list {
       list-style: none;
       margin: 20px auto;
@@ -198,7 +205,7 @@
       line-height: 1.4;
     }
 
-    /* =========== O zabiegach antycellulitowych =========== */
+    /* =========== SEKCJA "Zabiegi antycellulitowe Yasumi" =========== */
     .about-treatments-section {
       margin-bottom: 60px;
       max-width: 800px;
@@ -239,7 +246,6 @@
     .treatments-section h2 {
       margin-bottom: 30px;
       font-size: 1.8rem;
-      text-align: center;
     }
     .treatment-card {
       background: var(--secondary-color);
@@ -247,6 +253,14 @@
       padding: 20px;
       margin-bottom: 40px;
       box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+      text-align: left;
+    }
+    .treatment-card h3 {
+      color: var(--primary-color);
+      margin-bottom: 10px;
+      font-weight: 600;
+      font-size: 1.2rem;
+      text-align: center;
     }
 
     /* =========== SEKCJA PRZED/PO =========== */
@@ -291,7 +305,7 @@
       margin: 0 auto;
       text-align: center;
     }
-    .slider-container input[type=\"range\"] {
+    .slider-container input[type="range"] {
       width: 80%;
       max-width: 600px;
       margin: 10px auto;
@@ -299,10 +313,10 @@
       background: transparent;
     }
 
-    /* =========== SEKCJA HIGHLIGHT =========== */
+    /* =========== HIGHLIGHT =========== */
     .highlight-section {
       margin-bottom: 60px;
-      background: #ffecec; 
+      background: #ffecec;
       border-radius: 8px;
       padding: 40px 20px;
       text-align: center;
@@ -416,7 +430,7 @@
       text-align: center;
     }
 
-    /* =========== Sekcja \"O Yasumi\" =========== */
+    /* =========== Sekcja "O Yasumi" =========== */
     .o-yasumi-section {
       margin: 60px auto;
       max-width: 800px;
@@ -425,11 +439,13 @@
       border-left: 6px solid var(--primary-color);
       border-radius: 4px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      text-align: left;
     }
     .o-yasumi-section h2 {
       font-size: 1.8rem;
       margin-bottom: 20px;
       color: var(--primary-color);
+      text-align: center;
     }
     .o-yasumi-section p {
       margin-bottom: 15px;
@@ -526,6 +542,7 @@
   </style>
 </head>
 <body>
+
 <!-- =========== HERO =========== -->
 <header>
   <div class="hero">
@@ -613,7 +630,21 @@
   <!-- =========== TRZY ZABIEGI =========== -->
   <section class="treatments-section">
     <h2>Trzy Zabiegi, które odmienią Twoją skórę</h2>
-    <!-- ...Kod zabiegów (SILVER, GOLD, PLATINUM)... -->
+
+    <div class="treatment-card">
+      <h3>CelluFree Manual (SILVER)</h3>
+      <p>Naturalny pogromca cellulitu. Skuteczna metoda masażu poprawiająca krążenie i rozbijająca złogi tłuszczowe.</p>
+    </div>
+
+    <div class="treatment-card">
+      <h3>Cellulit Stop Therapy (GOLD)</h3>
+      <p>Połączenie masażu antycellulitowego i drewnianego wałka. Intensywne działanie redukujące cellulit i modelujące sylwetkę.</p>
+    </div>
+
+    <div class="treatment-card">
+      <h3>Cellulit Expert Therapy (PLATINUM)</h3>
+      <p>Najskuteczniejsza terapia 3w1. Masaż manualny, technologie LIPOZERO i bandaże ZeroCell Bandage dla maksymalnych efektów.</p>
+    </div>
   </section>
 
   <!-- =========== SEKCJA PRZED/PO =========== -->
@@ -731,19 +762,19 @@
   </section>
 </main>
 
+<footer>
+  <p>&copy; 2025 Yasumi. Wszelkie prawa zastrzeżone.</p>
+</footer>
 
-<!-- =========== JEDEN WSPÓLNY SKRYPT =========== -->
+<!-- =========== SKRYPT =========== -->
 <script>
-  // ---------------------------
-  // 1) SUWAK PRZED/PO
-  // ---------------------------
+  // SUWAK PRZED/PO
   const slider = document.getElementById('slider');
   const afterContainer = document.getElementById('afterContainer');
 
-  // Gdy użytkownik \"puści\" suwak (change) => blokada na 0% lub 100%
   slider.addEventListener('change', function() {
     let val = parseInt(this.value, 10);
-    if (val < 50) {
+    if(val < 50) {
       val = 0;
     } else {
       val = 100;
@@ -751,21 +782,12 @@
     this.value = val;
     afterContainer.style.width = val + '%';
   });
-
-  // W trakcie przesuwania (input) => pokazuje aktualne przesunięcie
   slider.addEventListener('input', function() {
     let val = parseInt(this.value, 10);
     afterContainer.style.width = val + '%';
   });
 
-  // ---------------------------
-  // 2) KARUZELA ZDJĘĆ
-  // ---------------------------
-  // Aby włączyć karuzelę, odkomentuj poniższy kod i upewnij się, że masz w sekcji HTML:
-  // <section class=\"carousel-section\"> ... </section>
-  <section class=\"carousel-section\">
-
-
+  // KARUZELA ZDJĘĆ
   const carouselContainer = document.getElementById('carouselContainer');
   const slides = Array.from(carouselContainer.getElementsByClassName('carousel-slide'));
   const prevBtn = document.getElementById('prevBtn');
@@ -779,13 +801,12 @@
     slide.style.left = (i * 100) + '%';
   });
 
-  for (let i = 0; i < totalSlides; i++) {
+  for(let i=0; i< totalSlides; i++){
     const dot = document.createElement('span');
     dot.classList.add('dot');
-    if (i === 0) dot.classList.add('active');
+    if(i === 0) dot.classList.add('active');
     dot.dataset.index = i;
     dotsContainer.appendChild(dot);
-
     dot.addEventListener('click', () => {
       goToSlide(i);
     });
@@ -793,9 +814,8 @@
   const allDots = Array.from(dotsContainer.getElementsByClassName('dot'));
 
   function goToSlide(index) {
-    if (index < 0) index = totalSlides - 1;
-    if (index >= totalSlides) index = 0;
-
+    if(index < 0) index = totalSlides - 1;
+    if(index >= totalSlides) index = 0;
     currentIndex = index;
     slides.forEach((slide, i) => {
       const offset = (i - currentIndex) * 100;
@@ -824,9 +844,32 @@
       goToSlide(currentIndex + 1);
     }, 4000);
   });
-  </section>
-  <footer>
-  <p>&copy; 2025 Yasumi. Wszelkie prawa zastrzeżone.</p>
-</footer>
-
 </script>
+
+<!-- SEKCJA KARUZELI -->
+<section class="carousel-section">
+  <h2>Galeria</h2>
+  <div class="carousel-container" id="carouselContainer">
+    <div class="carousel-slide">
+      <img src="https://res.cloudinary.com/dfbadk2ch/image/upload/v1737990433/zdjecie%20y/l1gfnuu5tkqlrq4rzuqh.jpg" alt="Slajd 1" />
+    </div>
+    <div class="carousel-slide">
+      <img src="https://res.cloudinary.com/dfbadk2ch/image/upload/v1737990434/zdjecie%20y/i2aon90gzmuyzxizqttm.jpg" alt="Slajd 2" />
+    </div>
+    <div class="carousel-slide">
+      <img src="https://res.cloudinary.com/dfbadk2ch/image/upload/v1737990434/zdjecie%20y/gjbdgxquwkgna4lzfp3m.jpg" alt="Slajd 3" />
+    </div>
+    <div class="carousel-slide">
+      <img src="https://res.cloudinary.com/dfbadk2ch/image/upload/v1737990435/zdjecie%20y/vxdyaer75fn6nyiyof7x.jpg" alt="Slajd 4" />
+    </div>
+    <div class="carousel-slide">
+      <img src="https://res.cloudinary.com/dfbadk2ch/image/upload/v1737990435/zdjecie%20y/h60mmaj5in8gpaetksg6.jpg" alt="Slajd 5" />
+    </div>
+  </div>
+  <button class="carousel-btn prev-btn" id="prevBtn">&#10094;</button>
+  <button class="carousel-btn next-btn" id="nextBtn">&#10095;</button>
+  <div class="carousel-dots" id="carouselDots"></div>
+</section>
+</body>
+</html>
+
