@@ -36,8 +36,12 @@
       background: #fff;
       line-height: 1.6;
     }
+    /* 
+      ZMIANA: Tekst w paragrafach i listach będzie wyśrodkowany.
+      Jeśli zależy Ci na justowaniu w stylu gazetowym, użyj "justify".
+    */
     p, li {
-      text-align: justify;
+      text-align: center;
     }
     img {
       display: block;
@@ -103,6 +107,7 @@
       font-weight: 600;
       transition: background 0.3s ease;
       text-align: center;
+      cursor: pointer;
     }
     .btn-primary:hover {
       background: #cf3f72;
@@ -129,6 +134,7 @@
       grid-template-columns: 1fr;
       gap: 20px;
       margin: 30px auto;
+      text-align: center;
     }
     .reason-box {
       background: var(--secondary-color);
@@ -146,7 +152,7 @@
       margin: 20px auto;
       padding: 0;
       max-width: 600px;
-      text-align: left;
+      text-align: center;
     }
     .why-benefits li {
       margin-bottom: 8px;
@@ -182,7 +188,7 @@
       margin: 20px auto;
       max-width: 600px;
       padding: 0;
-      text-align: left;
+      text-align: center;
     }
     .concerns-list li {
       margin-bottom: 10px;
@@ -214,7 +220,7 @@
       background: #f6f6ff;
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-      text-align: left;
+      text-align: center;
     }
     .about-treatments-section h3 {
       margin-bottom: 15px;
@@ -225,6 +231,7 @@
       margin: 20px auto;
       max-width: 600px;
       padding: 0;
+      text-align: center;
     }
     .about-treatments-section li {
       position: relative;
@@ -242,24 +249,34 @@
     /* =========== TRZY ZABIEGI =========== */
     .treatments-section {
       margin-bottom: 60px;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
     }
     .treatments-section h2 {
       margin-bottom: 30px;
       font-size: 1.8rem;
     }
+    /* NOWOŚĆ: Dodajemy kontener do kart zabiegów w formie grida */
+    .treatments-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
     .treatment-card {
       background: var(--secondary-color);
       border-radius: 8px;
       padding: 20px;
-      margin-bottom: 40px;
       box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-      text-align: left;
     }
     .treatment-card h3 {
       color: var(--primary-color);
       margin-bottom: 10px;
       font-weight: 600;
       font-size: 1.2rem;
+      text-align: center;
+    }
+    .treatment-card p {
       text-align: center;
     }
 
@@ -335,6 +352,7 @@
     .opinie-section {
       margin: 60px auto;
       max-width: 800px;
+      text-align: center;
     }
     .opinie-section h2 {
       font-size: 1.8rem;
@@ -366,19 +384,6 @@
       margin-bottom: 60px;
       text-align: center;
     }
-    .cta-section .btn-primary {
-      display: inline-block;
-      padding: 15px 30px;
-      background: var(--primary-color);
-      color: #fff;
-      font-size: 1.1rem;
-      font-weight: 600;
-      border-radius: 5px;
-      transition: background 0.3s ease;
-    }
-    .cta-section .btn-primary:hover {
-      background: #cf3f72;
-    }
 
     /* =========== FORMULARZ =========== */
     .form-section {
@@ -396,6 +401,8 @@
     }
     form.reservation-form {
       text-align: left;
+      max-width: 400px;
+      margin: 0 auto;
     }
     .form-field {
       margin-bottom: 15px;
@@ -430,8 +437,75 @@
       text-align: center;
     }
 
-    /* =========== Sekcja "O Yasumi" =========== */
-  <!-- Sekcja karuzeli zdjęć -->
+    /* =========== KARUZELA =========== */
+    .carousel-section {
+      margin: 60px auto;
+      max-width: 800px;
+      text-align: center;
+      position: relative;
+    }
+    .carousel-container {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      margin: 0 auto;
+    }
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+    .carousel-slide {
+      min-width: 100%;
+    }
+    .carousel-slide img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      display: block;
+    }
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.4);
+      color: #fff;
+      border: none;
+      font-size: 2rem;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 50%;
+      z-index: 10;
+    }
+    .prev-btn {
+      left: 10px;
+    }
+    .next-btn {
+      right: 10px;
+    }
+    .carousel-btn:hover {
+      background: rgba(0,0,0,0.6);
+    }
+    .carousel-dots {
+      margin-top: 15px;
+      text-align: center;
+    }
+    .dot {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      background: #ccc;
+      border-radius: 50%;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+    .dot.active {
+      background: var(--primary-color);
+    }
+  </style>
+</head>
+<body>
+
+<!-- =========== KARUZELA ZDJĘĆ =========== -->
 <section class="carousel-section">
   <h2>Galeria</h2>
   <div class="carousel-container">
@@ -461,124 +535,6 @@
   <!-- Kropki nawigacji -->
   <div class="carousel-dots" id="carouselDots"></div>
 </section>
-
-<style>
-  .carousel-section {
-    margin: 60px auto;
-    max-width: 800px;tera
-    text-align: center;
-    position: relative;
-  }
-  .carousel-container {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-  }
-  .carousel-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-  }
-  .carousel-slide {
-    min-width: 100%;
-    transition: transform 0.5s ease;
-  }
-  .carousel-slide img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    display: block;
-  }
-  .carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0,0,0,0.4);
-    color: #fff;
-    border: none;
-    font-size: 2rem;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 50%;
-    z-index: 10;
-  }
-  .prev-btn {
-    left: 10px;
-  }
-  .next-btn {
-    right: 10px;
-  }
-  .carousel-btn:hover {
-    background: rgba(0,0,0,0.6);
-  }
-  .carousel-dots {
-    margin-top: 15px;
-    text-align: center;
-  }
-  .dot {
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    background: #ccc;
-    border-radius: 50%;
-    margin: 0 5px;
-    cursor: pointer;
-  }
-  .dot.active {
-    background: var(--primary-color);
-  }
-</style>
-
-<script>
-  const track = document.getElementById('carouselTrack');
-  const slides = document.querySelectorAll('.carousel-slide');
-  const prevBtn = document.getElementById('prevBtn');
-  const nextBtn = document.getElementById('nextBtn');
-  const dotsContainer = document.getElementById('carouselDots');
-
-  let currentIndex = 0;
-  const totalSlides = slides.length;
-
-  // Tworzenie kropek
-  for (let i = 0; i < totalSlides; i++) {
-    const dot = document.createElement('span');
-    dot.classList.add('dot');
-    if (i === 0) dot.classList.add('active');
-    dot.dataset.index = i;
-    dotsContainer.appendChild(dot);
-
-    dot.addEventListener('click', () => {
-      goToSlide(i);
-    });
-  }
-  const allDots = document.querySelectorAll('.dot');
-
-  function goToSlide(index) {
-    if (index < 0) index = totalSlides - 1;
-    if (index >= totalSlides) index = 0;
-
-    currentIndex = index;
-    track.style.transform = `translateX(-${index * 100}%)`;
-
-    allDots.forEach(dot => dot.classList.remove('active'));
-    allDots[currentIndex].classList.add('active');
-  }
-
-  prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
-  nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
-
-  // Automatyczna zmiana slajdów
-  let autoSlide = setInterval(() => {
-    goToSlide(currentIndex + 1);
-  }, 4000);
-
-  track.addEventListener('mouseenter', () => clearInterval(autoSlide));
-  track.addEventListener('mouseleave', () => {
-    autoSlide = setInterval(() => {
-      goToSlide(currentIndex + 1);
-    }, 4000);
-  });
-</script>
-
 
 <!-- =========== HERO =========== -->
 <header>
@@ -667,20 +623,19 @@
   <!-- =========== TRZY ZABIEGI =========== -->
   <section class="treatments-section">
     <h2>Trzy Zabiegi, które odmienią Twoją skórę</h2>
-
-    <div class="treatment-card">
-      <h3>CelluFree Manual (SILVER)</h3>
-      <p>Naturalny pogromca cellulitu. Skuteczna metoda masażu poprawiająca krążenie i rozbijająca złogi tłuszczowe.</p>
-    </div>
-
-    <div class="treatment-card">
-      <h3>Cellulit Stop Therapy (GOLD)</h3>
-      <p>Połączenie masażu antycellulitowego i drewnianego wałka. Intensywne działanie redukujące cellulit i modelujące sylwetkę.</p>
-    </div>
-
-    <div class="treatment-card">
-      <h3>Cellulit Expert Therapy (PLATINUM)</h3>
-      <p>Najskuteczniejsza terapia 3w1. Masaż manualny, technologie LIPOZERO i bandaże ZeroCell Bandage dla maksymalnych efektów.</p>
+    <div class="treatments-cards">
+      <div class="treatment-card">
+        <h3>CelluFree Manual (SILVER)</h3>
+        <p>Naturalny pogromca cellulitu. Skuteczna metoda masażu poprawiająca krążenie i rozbijająca złogi tłuszczowe.</p>
+      </div>
+      <div class="treatment-card">
+        <h3>Cellulit Stop Therapy (GOLD)</h3>
+        <p>Połączenie masażu antycellulitowego i drewnianego wałka. Intensywne działanie redukujące cellulit i modelujące sylwetkę.</p>
+      </div>
+      <div class="treatment-card">
+        <h3>Cellulit Expert Therapy (PLATINUM)</h3>
+        <p>Najskuteczniejsza terapia 3w1. Masaż manualny, technologie LIPOZERO i bandaże ZeroCell Bandage dla maksymalnych efektów.</p>
+      </div>
     </div>
   </section>
 
@@ -803,7 +758,7 @@
   <p>&copy; 2025 Yasumi. Wszelkie prawa zastrzeżone.</p>
 </footer>
 
-<!-- =========== SKRYPT =========== -->
+<!-- =========== SKRYPTY =========== -->
 <script>
   // SUWAK PRZED/PO
   const slider = document.getElementById('slider');
@@ -819,14 +774,15 @@
     this.value = val;
     afterContainer.style.width = val + '%';
   });
+
   slider.addEventListener('input', function() {
     let val = parseInt(this.value, 10);
     afterContainer.style.width = val + '%';
   });
 
   // KARUZELA ZDJĘĆ
-  const carouselContainer = document.getElementById('carouselContainer');
-  const slides = Array.from(carouselContainer.getElementsByClassName('carousel-slide'));
+  const track = document.getElementById('carouselTrack');
+  const slides = document.querySelectorAll('.carousel-slide');
   const prevBtn = document.getElementById('prevBtn');
   const nextBtn = document.getElementById('nextBtn');
   const dotsContainer = document.getElementById('carouselDots');
@@ -834,79 +790,47 @@
   let currentIndex = 0;
   const totalSlides = slides.length;
 
-  slides.forEach((slide, i) => {
-    slide.style.left = (i * 100) + '%';
-  });
-
-  for(let i=0; i< totalSlides; i++){
+  // Tworzenie kropek
+  for (let i = 0; i < totalSlides; i++) {
     const dot = document.createElement('span');
     dot.classList.add('dot');
-    if(i === 0) dot.classList.add('active');
+    if (i === 0) dot.classList.add('active');
     dot.dataset.index = i;
     dotsContainer.appendChild(dot);
+    
     dot.addEventListener('click', () => {
       goToSlide(i);
     });
   }
-  const allDots = Array.from(dotsContainer.getElementsByClassName('dot'));
+  const allDots = document.querySelectorAll('.dot');
 
   function goToSlide(index) {
-    if(index < 0) index = totalSlides - 1;
-    if(index >= totalSlides) index = 0;
+    if (index < 0) index = totalSlides - 1;
+    if (index >= totalSlides) index = 0;
+
     currentIndex = index;
-    slides.forEach((slide, i) => {
-      const offset = (i - currentIndex) * 100;
-      slide.style.transform = `translateX(${offset}%)`;
-    });
+    track.style.transform = `translateX(-${index * 100}%)`;
+
     allDots.forEach(dot => dot.classList.remove('active'));
     allDots[currentIndex].classList.add('active');
   }
 
-  prevBtn.addEventListener('click', () => {
-    goToSlide(currentIndex - 1);
-  });
-  nextBtn.addEventListener('click', () => {
-    goToSlide(currentIndex + 1);
-  });
+  prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
+  nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
 
+  // Automatyczna zmiana slajdów co 4 sekundy
   let autoSlide = setInterval(() => {
     goToSlide(currentIndex + 1);
   }, 4000);
 
-  carouselContainer.addEventListener('mouseenter', () => {
-    clearInterval(autoSlide);
-  });
-  carouselContainer.addEventListener('mouseleave', () => {
+  // Pauza, gdy kursor najeżdża na zdjęcie
+  track.addEventListener('mouseenter', () => clearInterval(autoSlide));
+  track.addEventListener('mouseleave', () => {
     autoSlide = setInterval(() => {
       goToSlide(currentIndex + 1);
     }, 4000);
   });
 </script>
 
-<!-- SEKCJA KARUZELI -->
-<section class="carousel-section">
-  <h2>Galeria</h2>
-  <div class="carousel-container" id="carouselContainer">
-    <div class="carousel-slide">
-      <img src="https://res.cloudinary.com/dfbadk2ch/image/upload/v1737990433/zdjecie%20y/l1gfnuu5tkqlrq4rzuqh.jpg" alt="Slajd 1" />
-    </div>
-    <div class="carousel-slide">
-      <img src="https://res.cloudinary.com/dfbadk2ch/image/upload/v1737990434/zdjecie%20y/i2aon90gzmuyzxizqttm.jpg" alt="Slajd 2" />
-    </div>
-    <div class="carousel-slide">
-      <img src="https://res.cloudinary.com/dfbadk2ch/image/upload/v1737990434/zdjecie%20y/gjbdgxquwkgna4lzfp3m.jpg" alt="Slajd 3" />
-    </div>
-    <div class="carousel-slide">
-      <img src="https://res.cloudinary.com/dfbadk2ch/image/upload/v1737990435/zdjecie%20y/vxdyaer75fn6nyiyof7x.jpg" alt="Slajd 4" />
-    </div>
-    <div class="carousel-slide">
-      <img src="https://res.cloudinary.com/dfbadk2ch/image/upload/v1737990435/zdjecie%20y/h60mmaj5in8gpaetksg6.jpg" alt="Slajd 5" />
-    </div>
-  </div>
-  <button class="carousel-btn prev-btn" id="prevBtn">&#10094;</button>
-  <button class="carousel-btn next-btn" id="nextBtn">&#10095;</button>
-  <div class="carousel-dots" id="carouselDots"></div>
-</section>
 </body>
 </html>
-
