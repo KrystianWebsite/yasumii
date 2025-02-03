@@ -36,10 +36,7 @@
       background: #fff;
       line-height: 1.6;
     }
-    /* 
-      ZMIANA: Tekst w paragrafach i listach będzie wyśrodkowany.
-      Jeśli zależy Ci na justowaniu w stylu gazetowym, użyj "justify".
-    */
+    /* Globalne wyrównanie (center). Jeśli chcesz justify -> zmień na "text-align: justify;" */
     p, li {
       text-align: center;
     }
@@ -211,6 +208,19 @@
       line-height: 1.4;
     }
 
+    /* =========== MIEJSCE NA NOWE ZDJĘCIE =========== */
+    .additional-image-section {
+      margin: 40px auto;
+      max-width: 800px;
+      text-align: center;
+    }
+    .additional-image-section img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
     /* =========== SEKCJA "Zabiegi antycellulitowe Yasumi" =========== */
     .about-treatments-section {
       margin-bottom: 60px;
@@ -257,7 +267,6 @@
       margin-bottom: 30px;
       font-size: 1.8rem;
     }
-    /* NOWOŚĆ: Dodajemy kontener do kart zabiegów w formie grida */
     .treatments-cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -269,14 +278,11 @@
       padding: 20px;
       box-shadow: 0 3px 10px rgba(0,0,0,0.05);
     }
+    /* ZMIANA KOLORÓW TYLKO DLA NAGŁÓWKÓW WEDŁUG NAZWY */
     .treatment-card h3 {
-      color: var(--primary-color);
       margin-bottom: 10px;
       font-weight: 600;
       font-size: 1.2rem;
-      text-align: center;
-    }
-    .treatment-card p {
       text-align: center;
     }
 
@@ -437,7 +443,7 @@
       text-align: center;
     }
 
-    /* =========== KARUZELA =========== */
+    /* =========== KARUZELA (przeniesiona na koniec) =========== */
     .carousel-section {
       margin: 60px auto;
       max-width: 800px;
@@ -504,37 +510,6 @@
   </style>
 </head>
 <body>
-
-<!-- =========== KARUZELA ZDJĘĆ =========== -->
-<section class="carousel-section">
-  <h2>Galeria</h2>
-  <div class="carousel-container">
-    <div class="carousel-track" id="carouselTrack">
-      <div class="carousel-slide">
-        <img src="https://res.cloudinary.com/dfbadk2ch/image/upload/v1737990433/zdjecie%20y/l1gfnuu5tkqlrq4rzuqh.jpg" alt="Slajd 1" />
-      </div>
-      <div class="carousel-slide">
-        <img src="https://res.cloudinary.com/dfbadk2ch/image/upload/v1737990434/zdjecie%20y/i2aon90gzmuyzxizqttm.jpg" alt="Slajd 2" />
-      </div>
-      <div class="carousel-slide">
-        <img src="https://res.cloudinary.com/dfbadk2ch/image/upload/v1737990434/zdjecie%20y/gjbdgxquwkgna4lzfp3m.jpg" alt="Slajd 3" />
-      </div>
-      <div class="carousel-slide">
-        <img src="https://res.cloudinary.com/dfbadk2ch/image/upload/v1737990435/zdjecie%20y/vxdyaer75fn6nyiyof7x.jpg" alt="Slajd 4" />
-      </div>
-      <div class="carousel-slide">
-        <img src="https://res.cloudinary.com/dfbadk2ch/image/upload/v1737990435/zdjecie%20y/h60mmaj5in8gpaetksg6.jpg" alt="Slajd 5" />
-      </div>
-    </div>
-  </div>
-  
-  <!-- Strzałki nawigacji -->
-  <button class="carousel-btn prev-btn" id="prevBtn">&#10094;</button>
-  <button class="carousel-btn next-btn" id="nextBtn">&#10095;</button>
-  
-  <!-- Kropki nawigacji -->
-  <div class="carousel-dots" id="carouselDots"></div>
-</section>
 
 <!-- =========== HERO =========== -->
 <header>
@@ -606,6 +581,12 @@
     </p>
   </section>
 
+  <!-- =========== MIEJSCE NA WSTAWIENIE ZDJĘCIA =========== -->
+  <section class="additional-image-section">
+    <!-- Wstaw tu swoje zdjęcie -->
+    <img src="https://via.placeholder.com/800x400?text=Tu+wstaw+zdjecie" alt="Miejsce na dodatkowe zdjęcie" />
+  </section>
+
   <!-- =========== SEKCJA O zabiegach antycellulitowych =========== -->
   <section class="about-treatments-section">
     <h3>Zabiegi antycellulitowe Yasumi – odkryj sekret gładkiej i jędrnej skóry</h3>
@@ -625,15 +606,24 @@
     <h2>Trzy Zabiegi, które odmienią Twoją skórę</h2>
     <div class="treatments-cards">
       <div class="treatment-card">
-        <h3>CelluFree Manual (SILVER)</h3>
+        <!-- Zmiana koloru na accent-silver -->
+        <h3 style="color: var(--accent-silver);">
+          CelluFree Manual (SILVER)
+        </h3>
         <p>Naturalny pogromca cellulitu. Skuteczna metoda masażu poprawiająca krążenie i rozbijająca złogi tłuszczowe.</p>
       </div>
       <div class="treatment-card">
-        <h3>Cellulit Stop Therapy (GOLD)</h3>
+        <!-- Zmiana koloru na accent-gold -->
+        <h3 style="color: var(--accent-gold);">
+          Cellulit Stop Therapy (GOLD)
+        </h3>
         <p>Połączenie masażu antycellulitowego i drewnianego wałka. Intensywne działanie redukujące cellulit i modelujące sylwetkę.</p>
       </div>
       <div class="treatment-card">
-        <h3>Cellulit Expert Therapy (PLATINUM)</h3>
+        <!-- Zmiana koloru na accent-platinum -->
+        <h3 style="color: var(--accent-platinum);">
+          Cellulit Expert Therapy (PLATINUM)
+        </h3>
         <p>Najskuteczniejsza terapia 3w1. Masaż manualny, technologie LIPOZERO i bandaże ZeroCell Bandage dla maksymalnych efektów.</p>
       </div>
     </div>
@@ -754,6 +744,37 @@
   </section>
 </main>
 
+<!-- =========== KARUZELA ZDJĘĆ (NA KOŃCU) =========== -->
+<section class="carousel-section">
+  <h2>Galeria</h2>
+  <div class="carousel-container">
+    <div class="carousel-track" id="carouselTrack">
+      <div class="carousel-slide">
+        <img src="https://res.cloudinary.com/dfbadk2ch/image/upload/v1737990433/zdjecie%20y/l1gfnuu5tkqlrq4rzuqh.jpg" alt="Slajd 1" />
+      </div>
+      <div class="carousel-slide">
+        <img src="https://res.cloudinary.com/dfbadk2ch/image/upload/v1737990434/zdjecie%20y/i2aon90gzmuyzxizqttm.jpg" alt="Slajd 2" />
+      </div>
+      <div class="carousel-slide">
+        <img src="https://res.cloudinary.com/dfbadk2ch/image/upload/v1737990434/zdjecie%20y/gjbdgxquwkgna4lzfp3m.jpg" alt="Slajd 3" />
+      </div>
+      <div class="carousel-slide">
+        <img src="https://res.cloudinary.com/dfbadk2ch/image/upload/v1737990435/zdjecie%20y/vxdyaer75fn6nyiyof7x.jpg" alt="Slajd 4" />
+      </div>
+      <div class="carousel-slide">
+        <img src="https://res.cloudinary.com/dfbadk2ch/image/upload/v1737990435/zdjecie%20y/h60mmaj5in8gpaetksg6.jpg" alt="Slajd 5" />
+      </div>
+    </div>
+  </div>
+  
+  <!-- Strzałki nawigacji -->
+  <button class="carousel-btn prev-btn" id="prevBtn">&#10094;</button>
+  <button class="carousel-btn next-btn" id="nextBtn">&#10095;</button>
+  
+  <!-- Kropki nawigacji -->
+  <div class="carousel-dots" id="carouselDots"></div>
+</section>
+
 <footer>
   <p>&copy; 2025 Yasumi. Wszelkie prawa zastrzeżone.</p>
 </footer>
@@ -797,7 +818,7 @@
     if (i === 0) dot.classList.add('active');
     dot.dataset.index = i;
     dotsContainer.appendChild(dot);
-    
+
     dot.addEventListener('click', () => {
       goToSlide(i);
     });
@@ -823,7 +844,7 @@
     goToSlide(currentIndex + 1);
   }, 4000);
 
-  // Pauza, gdy kursor najeżdża na zdjęcie
+  // Pauza, gdy kursor najeżdża na karuzelę
   track.addEventListener('mouseenter', () => clearInterval(autoSlide));
   track.addEventListener('mouseleave', () => {
     autoSlide = setInterval(() => {
@@ -834,3 +855,4 @@
 
 </body>
 </html>
+
