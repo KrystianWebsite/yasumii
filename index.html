@@ -36,7 +36,7 @@
       background: #fff;
       line-height: 1.6;
     }
-    /* Globalne wyrównanie (center). Jeśli chcesz justify -> zmień na "text-align: justify;" */
+    /* Tekst wyśrodkowany globalnie w paragrafach i listach (możesz zmienić na justify) */
     p, li {
       text-align: center;
     }
@@ -278,7 +278,6 @@
       padding: 20px;
       box-shadow: 0 3px 10px rgba(0,0,0,0.05);
     }
-    /* ZMIANA KOLORÓW TYLKO DLA NAGŁÓWKÓW WEDŁUG NAZWY */
     .treatment-card h3 {
       margin-bottom: 10px;
       font-weight: 600;
@@ -443,7 +442,7 @@
       text-align: center;
     }
 
-    /* =========== KARUZELA (przeniesiona na koniec) =========== */
+    /* =========== KARUZELA (na końcu) =========== */
     .carousel-section {
       margin: 60px auto;
       max-width: 800px;
@@ -511,16 +510,15 @@
 </head>
 <body>
 
-<!-- =========== HERO =========== -->
+<!-- =========== HERO (bez ograniczonej oferty/CTA) =========== -->
 <header>
   <div class="hero">
     <div class="hero-content">
       <h1>Pogromca Cellulitu – Efekty Już Po Pierwszej Wizycie!</h1>
       <p>Zredukuj cellulit, wymodeluj sylwetkę i odzyskaj gładką skórę<br>
          dzięki naszym <strong>innowacyjnym zabiegom antycellulitowym</strong>.</p>
-      <p><strong>💥 Zarezerwuj wizytę teraz i oszczędzaj do 249 zł!</strong><br>
-         <strong>⏰ Oferta limitowana – tylko przez 48 godzin!</strong></p>
-      <a href="#rezerwacja" class="btn-primary">Zarezerwuj Teraz</a>
+      <!-- Usunięto fragment o oszczędzaniu oraz ofertę limitowaną, 
+           a także przycisk "Zarezerwuj Teraz" -->
     </div>
   </div>
 </header>
@@ -584,7 +582,7 @@
   <!-- =========== MIEJSCE NA WSTAWIENIE ZDJĘCIA =========== -->
   <section class="additional-image-section">
     <!-- Wstaw tu swoje zdjęcie -->
-    <img src="https://res.cloudinary.com/dfbadk2ch/image/upload/v1737899878/zdjecie%20y/coa6ohin85gpsmmuvxrc.jpg" alt="Miejsce na dodatkowe zdjęcie" />
+    <img src="https://via.placeholder.com/800x400?text=Tu+wstaw+zdjecie" alt="Miejsce na dodatkowe zdjęcie" />
   </section>
 
   <!-- =========== SEKCJA O zabiegach antycellulitowych =========== -->
@@ -605,26 +603,35 @@
   <section class="treatments-section">
     <h2>Trzy Zabiegi, które odmienią Twoją skórę</h2>
     <div class="treatments-cards">
+      <!-- SILVER -->
       <div class="treatment-card">
-        <!-- Zmiana koloru na accent-silver -->
         <h3 style="color: var(--accent-silver);">
           CelluFree Manual (SILVER)
         </h3>
         <p>Naturalny pogromca cellulitu. Skuteczna metoda masażu poprawiająca krążenie i rozbijająca złogi tłuszczowe.</p>
+        <p style="margin-top: 10px; font-weight:600;">
+          Cena: 250 zł
+        </p>
       </div>
+      <!-- GOLD -->
       <div class="treatment-card">
-        <!-- Zmiana koloru na accent-gold -->
         <h3 style="color: var(--accent-gold);">
           Cellulit Stop Therapy (GOLD)
         </h3>
         <p>Połączenie masażu antycellulitowego i drewnianego wałka. Intensywne działanie redukujące cellulit i modelujące sylwetkę.</p>
+        <p style="margin-top: 10px; font-weight:600;">
+          Cena: 280 zł
+        </p>
       </div>
+      <!-- PLATINUM -->
       <div class="treatment-card">
-        <!-- Zmiana koloru na accent-platinum -->
         <h3 style="color: var(--accent-platinum);">
           Cellulit Expert Therapy (PLATINUM)
         </h3>
         <p>Najskuteczniejsza terapia 3w1. Masaż manualny, technologie LIPOZERO i bandaże ZeroCell Bandage dla maksymalnych efektów.</p>
+        <p style="margin-top: 10px; font-weight:600;">
+          Cena: 490 zł
+        </p>
       </div>
     </div>
   </section>
@@ -733,6 +740,10 @@
         <button type="submit">Wyślij Rezerwację</button>
       </p>
     </form>
+    <!-- NOWA INFORMACJA O KONTAKCIE -->
+    <p style="margin-top:20px; font-size:0.95rem;">
+      Skontaktujemy się z Tobą w celu potwierdzenia wizyty.
+    </p>
   </section>
 
   <!-- =========== SEKCJA O YASUMI =========== -->
@@ -855,4 +866,3 @@
 
 </body>
 </html>
-
