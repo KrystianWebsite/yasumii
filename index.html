@@ -276,7 +276,7 @@
       border-radius: 8px;
       padding: 20px;
       box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-      text-align: left; /* lub center, wg uznania */
+      text-align: left;
     }
     .treatment-card h3 {
       margin-bottom: 10px;
@@ -453,6 +453,22 @@
       font-size: 1rem;
       background: #fff;
     }
+    .radio-list {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin-top: 5px;
+    }
+    .radio-list label {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-weight: normal;
+    }
+    .radio-list input[type="radio"] {
+      /* styl domyślny: kółko */
+    }
+
     .reservation-form button {
       display: inline-block;
       margin-top: 20px;
@@ -633,7 +649,6 @@
         </h3>
         <p><strong>Naturalny Pogromca Cellulitu</strong><br>
           Zredukuj cellulit w naturalny sposób dzięki intensywnemu masażowi manualnemu...</p>
-        <!-- Usunięta informacja o czasie, wstaw "cena od" -->
         <p><strong>cena od: 250 zł</strong></p>
         <p>
           <a class="btn-primary" href="#form-box">Wybieram CelluFree Manual</a>
@@ -735,12 +750,6 @@
     <a href="#form-box" class="btn-primary">Przejdź do Formularza Rezerwacji</a>
   </section>
 
-  <!-- =========== KRÓTKI OPIS ZABIEGÓW PRZED FORMULARZEM (DODATKOWO) =========== -->
-  <section style="max-width: 800px; margin: 40px auto; text-align: center;">
-    <h2>Krótki opis zabiegów</h2>
-    <p>Wybierz jeden z naszych trzech zabiegów antycellulitowych (CelluFree Manual, Cellulit Stop Therapy, Cellulit Expert Therapy), a następnie wskaż w formularzu wybrane partie ciała, na których najbardziej Ci zależy. Dzięki temu możemy precyzyjnie dostosować terapię do Twoich potrzeb!</p>
-  </section>
-
   <!-- =========== FORMULARZ =========== -->
   <section class="form-section" id="form-box">
     <h2>Formularz Rezerwacji</h2>
@@ -775,16 +784,31 @@
         </select>
       </p>
 
-      <!-- =========== WYBÓR PARTII CIAŁA =========== -->
+      <!-- =========== WYBÓR PARTII CIAŁA - RADIO BUTTONY =========== -->
       <p class="form-field">
-        <label for="bodyParts">Wybierz partie ciała (możesz wybrać kilka)</label>
-        <select id="bodyParts" name="Partie ciała" multiple style="height: 100px;">
-          <option value="Brzuch">Brzuch</option>
-          <option value="Uda">Uda</option>
-          <option value="Pośladki">Pośladki</option>
-          <option value="Ramiona">Ramiona</option>
-          <option value="Boki (tzw. „boczki”)">Boki (tzw. „boczki”)</option>
-        </select>
+        <label>Wybierz partię ciała</label>
+        <div class="radio-list">
+          <label>
+            <input type="radio" name="Partie ciała" value="Brzuch">
+            Brzuch
+          </label>
+          <label>
+            <input type="radio" name="Partie ciała" value="Uda">
+            Uda
+          </label>
+          <label>
+            <input type="radio" name="Partie ciała" value="Pośladki">
+            Pośladki
+          </label>
+          <label>
+            <input type="radio" name="Partie ciała" value="Ramiona">
+            Ramiona
+          </label>
+          <label>
+            <input type="radio" name="Partie ciała" value="Boki (tzw. „boczki”)">
+            Boki (tzw. „boczki”)
+          </label>
+        </div>
       </p>
 
       <p>
@@ -797,14 +821,15 @@
   </section>
 
   <!-- =========== SEKCJA O YASUMI =========== -->
-  <section class="o-yasumi-section">
-    <!-- Możesz wstawić dodatkowe zdjęcie, jeśli chcesz -->
+  <section class="o-yasumi-section" style="max-width: 800px; margin: 40px auto; text-align: center;">
     <h2>Yasumi Instytut Zdrowia i Urody w Ząbkach – Twoje miejsce piękna i relaksu</h2>
-    <p>
-      Pomagamy zabieganym kobietom odkryć sekret jędrnej skóry i smukłej sylwetki, aby mogły zachwycać swoim wyglądem każdego dnia...
-      <!-- ... pozostały opis, który miałeś wcześniej ... -->
+    <p style="text-align: center;">
+      Pomagamy zabieganym kobietom odkryć sekret jędrnej skóry i smukłej sylwetki, 
+      aby mogły zachwycać swoim wyglądem każdego dnia. W Yasumi Ząbki dbamy o to, 
+      by efekty naszych zabiegów były widoczne szybko, a jednocześnie nie wymagały 
+      inwestowania dużych sum pieniędzy ani poświęcania wielu godzin w salonie.
     </p>
-    <!-- ... dalsza treść ... -->
+    <!-- Reszta opisu, jeśli potrzebne -->
   </section>
 </main>
 
@@ -903,12 +928,12 @@
   prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
   nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
 
-  // Automatyczna zmiana slajdów co 4 sekundy
+  // Automatyczna zmiana slajdów
   let autoSlide = setInterval(() => {
     goToSlide(currentIndex + 1);
   }, 4000);
 
-  // Pauza, gdy kursor najedzie na karuzelę
+  // Pauza, gdy kursor jest na karuzeli
   track.addEventListener('mouseenter', () => clearInterval(autoSlide));
   track.addEventListener('mouseleave', () => {
     autoSlide = setInterval(() => {
@@ -919,4 +944,6 @@
 
 </body>
 </html>
+
+
 
