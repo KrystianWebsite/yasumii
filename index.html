@@ -256,7 +256,7 @@
       font-weight: bold;
     }
 
-    /* =========== TRZY ZABIEGI (NOWE OPISY, STARE CENY) =========== */
+    /* =========== TRZY ZABIEGI =========== */
     .treatments-section {
       margin-bottom: 60px;
       max-width: 900px;
@@ -277,7 +277,7 @@
       border-radius: 8px;
       padding: 20px;
       box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-      text-align: left; /* Opisy w stylu 'ulotki'; można ustawić center, jeśli wolisz */
+      text-align: left; /* Możesz zmienić na center, jeśli wolisz */
     }
     .treatment-card h3 {
       margin-bottom: 10px;
@@ -285,25 +285,31 @@
       font-size: 1.2rem;
       text-align: center;
     }
+    .treatment-card ul {
+      list-style: none;
+      margin: 10px 0;
+      padding: 0;
+    }
+    .treatment-card ul li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 5px;
+    }
+    .treatment-card ul li::before {
+      content: '•';
+      color: var(--text-color);
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+    }
     .treatment-card p {
-      margin-bottom: 10px;
+      margin-top: 10px;
       line-height: 1.4;
     }
-    /* Przyciski wewnątrz kart */
-    .treatment-btn {
+    .treatment-card .btn-primary {
       display: inline-block;
       margin-top: 10px;
-      padding: 10px 20px;
-      background: var(--primary-color);
-      color: #fff;
-      font-weight: 600;
-      border-radius: 5px;
-      text-decoration: none;
-      transition: background 0.3s ease;
-      text-align: center;
-    }
-    .treatment-btn:hover {
-      background: #cf3f72;
+      font-size: 0.9rem;
     }
 
     /* =========== SEKCJA PRZED/PO =========== */
@@ -600,7 +606,7 @@
 
   <!-- =========== MIEJSCE NA WSTAWIENIE ZDJĘCIA =========== -->
   <section class="additional-image-section">
-    <img src="https://res.cloudinary.com/dfbadk2ch/image/upload/v1738693855/l5lw0vlqajkzrd1jrcu3.png" alt="Zdjęcie 2" />
+    <img src="https://res.cloudinary.com/dfbadk2ch/image/upload/v1738693855/l5lw0vlqajkzrd1jrcu3.png" alt="Yasumi Zabiegi" />
   </section>
 
   <!-- =========== SEKCJA O zabiegach antycellulitowych =========== -->
@@ -623,74 +629,82 @@
     <div class="treatments-cards">
       <!-- SILVER -->
       <div class="treatment-card">
-        <h3 style="color: var(--accent-silver); text-align: center;">
+        <h3 style="color: var(--accent-silver);">
           CelluFree Manual (SILVER)
         </h3>
         <p><strong>Naturalny Pogromca Cellulitu</strong><br>
-        Zredukuj cellulit w naturalny sposób dzięki intensywnemu masażowi manualnemu. Nasz specjalista wykorzystuje zaawansowane techniki ugniatania, rozcierania i oklepywania, które:</p>
-        <ul style="text-align:left; margin-left: 20px; margin-bottom:10px;">
+          Zredukuj cellulit w naturalny sposób dzięki intensywnemu masażowi manualnemu. Nasz specjalista wykorzystuje zaawansowane techniki ugniatania, rozcierania i oklepywania, które:</p>
+        <ul>
           <li>Pobudzają krążenie krwi i limfy, redukując obrzęki.</li>
           <li>Wspomagają usuwanie toksyn i nadmiaru wody z organizmu.</li>
           <li>Rozbijają złogi tłuszczowe, poprawiając strukturę skóry.</li>
           <li>Przywracają jędrność i gładkość skóry.</li>
         </ul>
         <p><strong>Dlaczego warto?</strong><br>
-        ✅ Skuteczna redukcja cellulitu już po pierwszej wizycie.<br>
-        ✅ Naturalna metoda, bez urządzeń i inwazyjnych technologii.<br>
-        ✅ Idealny dla osób szukających bezpiecznego i komfortowego zabiegu.</p>
-        <p><strong>⏳ Czas trwania:</strong> 45 minut <br>
-        <strong>💰 Cena:</strong> 250 zł</p>
-        <p>TERAZ DO Pierwszej Wizyty:<br>
-        🌟 Konsultacja specjalisty GRATIS.<br>
-        🌟 Profesjonalne porady dotyczące pielęgnacji domowej GRATIS.</p>
-        <a href="#form-box" class="treatment-btn">Wybieram CelluFree Manual</a>
+          ✅ Skuteczna redukcja cellulitu już po pierwszej wizycie.<br>
+          ✅ Naturalna metoda, bez urządzeń i inwazyjnych technologii.<br>
+          ✅ Idealny dla osób szukających bezpiecznego i komfortowego zabiegu.</p>
+        <p>⏳ Czas trwania: 45 minut<br>
+           💰 Cena: 250 zł</p>
+        <p><strong>TERAZ DO Pierwszej Wizyty:</strong><br>
+           🌟 Konsultacja specjalisty GRATIS.<br>
+           🌟 Profesjonalne porady dotyczące pielęgnacji domowej GRATIS.</p>
+        <p>
+          <a class="btn-primary" href="#">Wybieram CelluFree Manual</a>
+        </p>
       </div>
+
       <!-- GOLD -->
       <div class="treatment-card">
-        <h3 style="color: var(--accent-gold); text-align: center;">
+        <h3 style="color: var(--accent-gold);">
           Cellulit Stop Therapy (GOLD)
         </h3>
         <p><strong>Kompleksowe Działanie 2w1</strong><br>
-        Odkryj efektywne połączenie manualnego masażu antycellulitowego i masażu wałkiem drewnianym. To innowacyjna terapia, która:</p>
-        <ul style="text-align:left; margin-left: 20px; margin-bottom:10px;">
+          Odkryj efektywne połączenie manualnego masażu antycellulitowego i masażu wałkiem drewnianym. To innowacyjna terapia, która:</p>
+        <ul>
           <li>Redukuje cellulit wodny, tłuszczowy i włóknisty.</li>
           <li>Poprawia elastyczność i napięcie skóry.</li>
           <li>Modeluje sylwetkę, działając głęboko na tkanki.</li>
           <li>Intensywnie stymuluje krążenie i drenaż limfatyczny.</li>
         </ul>
         <p><strong>Dlaczego warto?</strong><br>
-        ✅ Połączenie dwóch zaawansowanych metod w jednym zabiegu.<br>
-        ✅ Widoczne efekty w postaci wygładzonej skóry i poprawionego konturu ciała.<br>
-        ✅ Zabieg bezbolesny i bezpieczny, odpowiedni dla każdego typu skóry.</p>
-        <p><strong>⏳ Czas trwania:</strong> 60 minut <br>
-        <strong>💰 Cena:</strong> 280 zł</p>
-        <p>TERAZ DO Pierwszej Wizyty:<br>
-        🌟 Konsultacja specjalisty GRATIS.<br>
-        🌟 Profesjonalne porady dotyczące pielęgnacji domowej GRATIS.</p>
-        <a href="#form-box" class="treatment-btn">Wybieram Cellulit Stop Therapy</a>
+          ✅ Połączenie dwóch zaawansowanych metod w jednym zabiegu.<br>
+          ✅ Widoczne efekty w postaci wygładzonej skóry i poprawionego konturu ciała.<br>
+          ✅ Zabieg bezbolesny i bezpieczny, odpowiedni dla każdego typu skóry.</p>
+        <p>⏳ Czas trwania: 60 minut<br>
+           💰 Cena: 280 zł</p>
+        <p><strong>TERAZ DO Pierwszej Wizyty:</strong><br>
+           🌟 Konsultacja specjalisty GRATIS.<br>
+           🌟 Profesjonalne porady dotyczące pielęgnacji domowej GRATIS.</p>
+        <p>
+          <a class="btn-primary" href="#">Wybieram Cellulit Stop Therapy</a>
+        </p>
       </div>
+
       <!-- PLATINUM -->
       <div class="treatment-card">
-        <h3 style="color: var(--accent-platinum); text-align: center;">
+        <h3 style="color: var(--accent-platinum);">
           Cellulit Expert Therapy (PLATINUM)
         </h3>
         <p><strong>Najskuteczniejsza Terapia 3w1</strong><br>
-        Poznaj najbardziej zaawansowaną terapię antycellulitową, która łączy:</p>
-        <ol style="text-align:left; margin-left: 20px; margin-bottom:10px;">
-          <li>Manualny masaż antycellulitowy – przygotowuje skórę, pobudzając krążenie i eliminując toksyny.</li>
-          <li>Technologię LIPOZERO – precyzyjne modelowanie sylwetki dzięki radiofrekwencji RF, lipolizie ultradźwiękowej i terapii LED.</li>
-          <li>Bandaże ZeroCell Bandage – nasączone aktywnymi składnikami, które głęboko regenerują skórę, napinają ją i intensywnie redukują cellulit.</li>
-        </ol>
+          Poznaj najbardziej zaawansowaną terapię antycellulitową, która łączy:</p>
+        <ul>
+          <li><strong>Manualny masaż antycellulitowy</strong> – przygotowuje skórę, pobudzając krążenie i eliminując toksyny.</li>
+          <li><strong>Technologię LIPOZERO</strong> – precyzyjne modelowanie sylwetki dzięki radiofrekwencji RF, lipolizie ultradźwiękowej i terapii LED.</li>
+          <li><strong>Bandaże ZeroCell Bandage</strong> – nasączone aktywnymi składnikami, które głęboko regenerują skórę, napinają ją i intensywnie redukują cellulit.</li>
+        </ul>
         <p><strong>Dlaczego warto?</strong><br>
-        ✅ Kompleksowe działanie, które zapewnia maksymalną redukcję cellulitu.<br>
-        ✅ Długotrwałe efekty poprawy napięcia i elastyczności skóry.<br>
-        ✅ Dedykowany osobom szukającym najwyższej skuteczności.</p>
-        <p><strong>⏳ Czas trwania:</strong> 90 minut <br>
-        <strong>💰 Cena:</strong> 490 zł</p>
-        <p>TERAZ DO Pierwszej Wizyty:<br>
-        🌟 Konsultacja specjalisty GRATIS.<br>
-        🌟 Profesjonalne porady dotyczące pielęgnacji domowej GRATIS.</p>
-        <a href="#form-box" class="treatment-btn">Wybieram Cellulit Expert Therapy</a>
+          ✅ Kompleksowe działanie, które zapewnia maksymalną redukcję cellulitu.<br>
+          ✅ Długotrwałe efekty poprawy napięcia i elastyczności skóry.<br>
+          ✅ Dedykowany osobom szukającym najwyższej skuteczności.</p>
+        <p>⏳ Czas trwania: 90 minut<br>
+           💰 Cena: 490 zł</p>
+        <p><strong>TERAZ DO Pierwszej Wizyty:</strong><br>
+           🌟 Konsultacja specjalisty GRATIS.<br>
+           🌟 Profesjonalne porady dotyczące pielęgnacji domowej GRATIS.</p>
+        <p>
+          <a class="btn-primary" href="#">Wybieram Cellulit Expert Therapy</a>
+        </p>
       </div>
     </div>
   </section>
@@ -701,4 +715,269 @@
     <p class="caption">
       <span>Przed</span> / <span>Po</span>
     </p>
-    <div
+    <div class="before-after-wrapper" id="beforeAfterBox">
+      <img 
+        src="https://res.cloudinary.com/dfbadk2ch/image/upload/v1737990435/zdjecie%20y/bzzeqf6qvui6pv1t6cu9.jpg" 
+        alt="Przed" 
+        class="before-img"
+      >
+      <div class="after-container" id="afterContainer">
+        <img 
+          src="https://res.cloudinary.com/dfbadk2ch/image/upload/v1737990435/zdjecie%20y/zg8wubsayurbhkfzm7vm.jpg" 
+          alt="Po" 
+          class="after-img"
+        >
+      </div>
+    </div>
+    <div class="slider-container">
+      <input type="range" id="slider" min="0" max="100" value="0">
+    </div>
+  </section>
+
+  <!-- =========== SEKCJA HIGHLIGHT =========== -->
+  <section class="highlight-section">
+    <h2>Nawet 70% mniej widocznego cellulitu już po 1 zabiegu</h2>
+    <p>dzięki przełomowej terapii antycellulitowej Yasumi – bez bólu, bez skalpela, z natychmiastowymi efektami!</p>
+    <p>Nasze innowacyjne zabiegi, takie jak <strong>Cellulit Expert Therapy</strong>, działają na głębsze warstwy skóry, skutecznie redukując cellulit, poprawiając jędrność i modelując sylwetkę. Odkryj, jak łatwo możesz odzyskać gładką i jędrną skórę, bez bólu, inwazyjnych procedur i długiej rekonwalescencji.</p>
+    <p><strong>Zarezerwuj już teraz i poczuj różnicę od pierwszej wizyty!</strong></p>
+    <a href="#rezerwacja" class="btn-primary">Przejdź do rezerwacji</a>
+  </section>
+
+  <!-- =========== OPINIE =========== -->
+  <section class="opinie-section">
+    <h2>Opinie naszych klientek</h2>
+    <div class="opinie-list">
+      <div class="opinia-box">
+        <div class="opinia-text">
+          „Zabieg przyniósł zaskakująco szybkie efekty, a atmosfera w Yasumi sprawiła, że czułam się jak w SPA!”
+        </div>
+        <div class="opinia-author">– Anna K.</div>
+      </div>
+      <div class="opinia-box">
+        <div class="opinia-text">
+          „Po pierwszej sesji skóra wyraźnie się wygładziła. Najlepsza inwestycja w siebie, polecam gorąco!”
+        </div>
+        <div class="opinia-author">– Marta W.</div>
+      </div>
+      <div class="opinia-box">
+        <div class="opinia-text">
+          „Dzięki terapii antycellulitowej odzyskałam pewność siebie. Profesjonalne podejście i trwałe rezultaty.”
+        </div>
+        <div class="opinia-author">– Katarzyna R.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========== CTA DO FORMULARZA =========== -->
+  <section class="cta-section" id="rezerwacja">
+    <p style="font-size:1.2rem; margin-bottom:20px;">
+      Zarezerwuj swoją wizytę już dziś i pożegnaj cellulit raz na zawsze!
+    </p>
+    <a href="#form-box" class="btn-primary">Przejdź do Formularza Rezerwacji</a>
+  </section>
+
+  <!-- =========== FORMULARZ =========== -->
+  <section class="form-section" id="form-box">
+    <h2>Formularz Rezerwacji</h2>
+    <form name="rezerwacja" class="reservation-form" method="POST" netlify>
+      <p class="form-field">
+        <label for="name">Imię i nazwisko</label>
+        <input type="text" id="name" name="Imię i nazwisko" required />
+      </p>
+      <p class="form-field">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="E-mail" required />
+      </p>
+      <p class="form-field">
+        <label for="phone">Numer telefonu</label>
+        <input type="tel" id="phone" name="Numer telefonu" required />
+      </p>
+      <p class="form-field">
+        <label for="date">Data wizyty</label>
+        <input type="date" id="date" name="Data wizyty" required />
+      </p>
+      <p class="form-field">
+        <label for="time">Godzina wizyty</label>
+        <input type="time" id="time" name="Godzina wizyty" required />
+      </p>
+      <p class="form-field">
+        <label for="treatmentSelect">Wybór zabiegu</label>
+        <select id="treatmentSelect" name="Wybór zabiegu" required>
+          <option value="">--Wybierz zabieg--</option>
+          <option value="CelluFree Manual">CelluFree Manual</option>
+          <option value="Cellulit Stop Therapy">Cellulit Stop Therapy</option>
+          <option value="Cellulit Expert Therapy">Cellulit Expert Therapy</option>
+        </select>
+      </p>
+      <p>
+        <button type="submit">Wyślij Rezerwację</button>
+      </p>
+    </form>
+    <p style="margin-top:20px; font-size:0.95rem;">
+      Skontaktujemy się z Tobą w celu potwierdzenia wizyty.
+    </p>
+  </section>
+
+  <!-- =========== NOWY OPIS O YASUMI =========== -->
+  <section class="o-yasumi-section">
+    <!-- Obrazek przed opisem -->
+    <img 
+      src="https://res.cloudinary.com/dfbadk2ch/image/upload/v1738693856/umytvkwk3upsysazxcu0.png" 
+      alt="Yasumi Instytut Zdrowia i Urody w Ząbkach" 
+      style="max-width: 500px; margin-bottom: 20px;"
+    >
+
+    <h2>Yasumi Instytut Zdrowia i Urody w Ząbkach – Twoje miejsce piękna i relaksu</h2>
+    <p>
+      Pomagamy zabieganym kobietom odkryć sekret jędrnej skóry i smukłej sylwetki, aby mogły zachwycać swoim wyglądem każdego dnia. 
+      W Yasumi Ząbki dbamy o to, by efekty naszych zabiegów były widoczne szybko, a jednocześnie nie wymagały inwestowania dużych sum 
+      pieniędzy ani poświęcania wielu godzin w salonie.
+    </p>
+
+    <h3>Dlaczego Yasumi Ząbki?</h3>
+    <p>
+      To nie tylko miejsce, to filozofia, która stawia na połączenie najnowszych technologii w medycynie estetycznej 
+      z indywidualnym podejściem do każdej klientki. Jesteśmy dumni z naszej oferty autorskich zabiegów, 
+      które łączą skuteczność, bezpieczeństwo i komfort – wszystko po to, abyś mogła poczuć się wyjątkowo.
+    </p>
+
+    <h3>Czym się wyróżniamy?</h3>
+    <ul style="text-align: left; max-width: 700px; margin: 0 auto;">
+      <li><strong>Profesjonalizm i doświadczenie</strong> – Nasz zespół to wykwalifikowani specjaliści, którzy nieustannie podnoszą swoje kompetencje.</li>
+      <li><strong>Najwyższa jakość usług</strong> – Wykorzystujemy wyselekcjonowane kosmetyki oraz urządzenia medyczne najwyższej klasy.</li>
+      <li><strong>Przyjazna atmosfera</strong> – Każda wizyta to chwila relaksu w miejscu, które emanuje ciepłem i troską.</li>
+    </ul>
+
+    <h3>Dla kobiet, które cenią swój czas i piękno</h3>
+    <p>
+      Jeśli jesteś kobietą, która:
+      <br>• Ceni profesjonalizm i skuteczność,
+      <br>• Szuka miejsca, gdzie piękno łączy się z relaksem,
+      <br>• Chce zadbać o siebie bez poświęcania wielu godzin i nadmiernych wydatków – 
+      Yasumi Ząbki jest dla Ciebie!
+    </p>
+
+    <p>
+      Odkryj nasz świat, gdzie Twoje piękno jest naszą misją. 
+      Dołącz do grona naszych zadowolonych klientek, które każdego dnia zachwycają jędrną skórą, 
+      smukłą sylwetką i pewnością siebie.
+    </p>
+
+    <p style="font-weight: 600; margin-top: 10px;">
+      Yasumi Ząbki – piękno na wyciągnięcie ręki.<br>
+      Zaufaj nam, a poczujesz, że jesteś w najlepszych rękach.
+    </p>
+  </section>
+</main>
+
+<!-- =========== KARUZELA ZDJĘĆ (NA KOŃCU) =========== -->
+<section class="carousel-section">
+  <h2>Galeria</h2>
+  <div class="carousel-container">
+    <div class="carousel-track" id="carouselTrack">
+      <div class="carousel-slide">
+        <img src="https://res.cloudinary.com/dfbadk2ch/image/upload/v1737990433/zdjecie%20y/l1gfnuu5tkqlrq4rzuqh.jpg" alt="Slajd 1" />
+      </div>
+      <div class="carousel-slide">
+        <img src="https://res.cloudinary.com/dfbadk2ch/image/upload/v1737990434/zdjecie%20y/i2aon90gzmuyzxizqttm.jpg" alt="Slajd 2" />
+      </div>
+      <div class="carousel-slide">
+        <img src="https://res.cloudinary.com/dfbadk2ch/image/upload/v1737990434/zdjecie%20y/gjbdgxquwkgna4lzfp3m.jpg" alt="Slajd 3" />
+      </div>
+      <div class="carousel-slide">
+        <img src="https://res.cloudinary.com/dfbadk2ch/image/upload/v1737990435/zdjecie%20y/vxdyaer75fn6nyiyof7x.jpg" alt="Slajd 4" />
+      </div>
+      <div class="carousel-slide">
+        <img src="https://res.cloudinary.com/dfbadk2ch/image/upload/v1737990435/zdjecie%20y/h60mmaj5in8gpaetksg6.jpg" alt="Slajd 5" />
+      </div>
+    </div>
+  </div>
+  
+  <!-- Strzałki nawigacji -->
+  <button class="carousel-btn prev-btn" id="prevBtn">&#10094;</button>
+  <button class="carousel-btn next-btn" id="nextBtn">&#10095;</button>
+  
+  <!-- Kropki nawigacji -->
+  <div class="carousel-dots" id="carouselDots"></div>
+</section>
+
+<footer>
+  <p>&copy; 2025 Yasumi. Wszelkie prawa zastrzeżone.</p>
+</footer>
+
+<!-- =========== SKRYPTY =========== -->
+<script>
+  // SUWAK PRZED/PO
+  const slider = document.getElementById('slider');
+  const afterContainer = document.getElementById('afterContainer');
+
+  slider.addEventListener('change', function() {
+    let val = parseInt(this.value, 10);
+    if(val < 50) {
+      val = 0;
+    } else {
+      val = 100;
+    }
+    this.value = val;
+    afterContainer.style.width = val + '%';
+  });
+
+  slider.addEventListener('input', function() {
+    let val = parseInt(this.value, 10);
+    afterContainer.style.width = val + '%';
+  });
+
+  // KARUZELA ZDJĘĆ
+  const track = document.getElementById('carouselTrack');
+  const slides = document.querySelectorAll('.carousel-slide');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const dotsContainer = document.getElementById('carouselDots');
+
+  let currentIndex = 0;
+  const totalSlides = slides.length;
+
+  // Tworzenie kropek
+  for (let i = 0; i < totalSlides; i++) {
+    const dot = document.createElement('span');
+    dot.classList.add('dot');
+    if (i === 0) dot.classList.add('active');
+    dot.dataset.index = i;
+    dotsContainer.appendChild(dot);
+
+    dot.addEventListener('click', () => {
+      goToSlide(i);
+    });
+  }
+  const allDots = document.querySelectorAll('.dot');
+
+  function goToSlide(index) {
+    if (index < 0) index = totalSlides - 1;
+    if (index >= totalSlides) index = 0;
+
+    currentIndex = index;
+    track.style.transform = `translateX(-${index * 100}%)`;
+
+    allDots.forEach(dot => dot.classList.remove('active'));
+    allDots[currentIndex].classList.add('active');
+  }
+
+  prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
+  nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
+
+  // Automatyczna zmiana slajdów co 4 sekundy
+  let autoSlide = setInterval(() => {
+    goToSlide(currentIndex + 1);
+  }, 4000);
+
+  // Pauza, gdy kursor najeżdża na karuzelę
+  track.addEventListener('mouseenter', () => clearInterval(autoSlide));
+  track.addEventListener('mouseleave', () => {
+    autoSlide = setInterval(() => {
+      goToSlide(currentIndex + 1);
+    }, 4000);
+  });
+</script>
+
+</body>
+</html>
