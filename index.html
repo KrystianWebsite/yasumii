@@ -36,6 +36,7 @@
       background: #fff;
       line-height: 1.6;
     }
+    /* Tekst wyśrodkowany globalnie w paragrafach i listach (możesz zmienić na justify) */
     p, li {
       text-align: center;
     }
@@ -276,7 +277,7 @@
       border-radius: 8px;
       padding: 20px;
       box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-      text-align: left;
+      text-align: left; /* Możesz zmienić na center, jeśli wolisz */
     }
     .treatment-card h3 {
       margin-bottom: 10px;
@@ -453,22 +454,6 @@
       font-size: 1rem;
       background: #fff;
     }
-    .radio-list {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-      margin-top: 5px;
-    }
-    .radio-list label {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      font-weight: normal;
-    }
-    .radio-list input[type="radio"] {
-      /* styl domyślny: kółko */
-    }
-
     .reservation-form button {
       display: inline-block;
       margin-top: 20px;
@@ -552,7 +537,7 @@
 </head>
 <body>
 
-<!-- =========== HERO =========== -->
+<!-- =========== HERO (bez ograniczonej oferty/CTA) =========== -->
 <header>
   <div class="hero">
     <div class="hero-content">
@@ -648,10 +633,24 @@
           CelluFree Manual (SILVER)
         </h3>
         <p><strong>Naturalny Pogromca Cellulitu</strong><br>
-          Zredukuj cellulit w naturalny sposób dzięki intensywnemu masażowi manualnemu...</p>
-        <p><strong>cena od: 250 zł</strong></p>
+          Zredukuj cellulit w naturalny sposób dzięki intensywnemu masażowi manualnemu. Nasz specjalista wykorzystuje zaawansowane techniki ugniatania, rozcierania i oklepywania, które:</p>
+        <ul>
+          <li>Pobudzają krążenie krwi i limfy, redukując obrzęki.</li>
+          <li>Wspomagają usuwanie toksyn i nadmiaru wody z organizmu.</li>
+          <li>Rozbijają złogi tłuszczowe, poprawiając strukturę skóry.</li>
+          <li>Przywracają jędrność i gładkość skóry.</li>
+        </ul>
+        <p><strong>Dlaczego warto?</strong><br>
+          ✅ Skuteczna redukcja cellulitu już po pierwszej wizycie.<br>
+          ✅ Naturalna metoda, bez urządzeń i inwazyjnych technologii.<br>
+          ✅ Idealny dla osób szukających bezpiecznego i komfortowego zabiegu.</p>
+        <p>⏳ Czas trwania: 45 minut<br>
+           💰 Cena: 250 zł</p>
+        <p><strong>TERAZ DO Pierwszej Wizyty:</strong><br>
+           🌟 Konsultacja specjalisty GRATIS.<br>
+           🌟 Profesjonalne porady dotyczące pielęgnacji domowej GRATIS.</p>
         <p>
-          <a class="btn-primary" href="#form-box">Wybieram CelluFree Manual</a>
+          <a class="btn-primary" href="#">Wybieram CelluFree Manual</a>
         </p>
       </div>
 
@@ -661,10 +660,24 @@
           Cellulit Stop Therapy (GOLD)
         </h3>
         <p><strong>Kompleksowe Działanie 2w1</strong><br>
-          Odkryj efektywne połączenie manualnego masażu antycellulitowego i masażu wałkiem drewnianym...</p>
-        <p><strong>cena od: 280 zł</strong></p>
+          Odkryj efektywne połączenie manualnego masażu antycellulitowego i masażu wałkiem drewnianym. To innowacyjna terapia, która:</p>
+        <ul>
+          <li>Redukuje cellulit wodny, tłuszczowy i włóknisty.</li>
+          <li>Poprawia elastyczność i napięcie skóry.</li>
+          <li>Modeluje sylwetkę, działając głęboko na tkanki.</li>
+          <li>Intensywnie stymuluje krążenie i drenaż limfatyczny.</li>
+        </ul>
+        <p><strong>Dlaczego warto?</strong><br>
+          ✅ Połączenie dwóch zaawansowanych metod w jednym zabiegu.<br>
+          ✅ Widoczne efekty w postaci wygładzonej skóry i poprawionego konturu ciała.<br>
+          ✅ Zabieg bezbolesny i bezpieczny, odpowiedni dla każdego typu skóry.</p>
+        <p>⏳ Czas trwania: 60 minut<br>
+           💰 Cena: 280 zł</p>
+        <p><strong>TERAZ DO Pierwszej Wizyty:</strong><br>
+           🌟 Konsultacja specjalisty GRATIS.<br>
+           🌟 Profesjonalne porady dotyczące pielęgnacji domowej GRATIS.</p>
         <p>
-          <a class="btn-primary" href="#form-box">Wybieram Cellulit Stop Therapy</a>
+          <a class="btn-primary" href="#">Wybieram Cellulit Stop Therapy</a>
         </p>
       </div>
 
@@ -674,10 +687,23 @@
           Cellulit Expert Therapy (PLATINUM)
         </h3>
         <p><strong>Najskuteczniejsza Terapia 3w1</strong><br>
-          Połączenie masażu manualnego, technologii LIPOZERO i bandaży ZeroCell Bandage...</p>
-        <p><strong>cena od: 490 zł</strong></p>
+          Poznaj najbardziej zaawansowaną terapię antycellulitową, która łączy:</p>
+        <ul>
+          <li><strong>Manualny masaż antycellulitowy</strong> – przygotowuje skórę, pobudzając krążenie i eliminując toksyny.</li>
+          <li><strong>Technologię LIPOZERO</strong> – precyzyjne modelowanie sylwetki dzięki radiofrekwencji RF, lipolizie ultradźwiękowej i terapii LED.</li>
+          <li><strong>Bandaże ZeroCell Bandage</strong> – nasączone aktywnymi składnikami, które głęboko regenerują skórę, napinają ją i intensywnie redukują cellulit.</li>
+        </ul>
+        <p><strong>Dlaczego warto?</strong><br>
+          ✅ Kompleksowe działanie, które zapewnia maksymalną redukcję cellulitu.<br>
+          ✅ Długotrwałe efekty poprawy napięcia i elastyczności skóry.<br>
+          ✅ Dedykowany osobom szukającym najwyższej skuteczności.</p>
+        <p>⏳ Czas trwania: 90 minut<br>
+           💰 Cena: 490 zł</p>
+        <p><strong>TERAZ DO Pierwszej Wizyty:</strong><br>
+           🌟 Konsultacja specjalisty GRATIS.<br>
+           🌟 Profesjonalne porady dotyczące pielęgnacji domowej GRATIS.</p>
         <p>
-          <a class="btn-primary" href="#form-box">Wybieram Cellulit Expert Therapy</a>
+          <a class="btn-primary" href="#">Wybieram Cellulit Expert Therapy</a>
         </p>
       </div>
     </div>
@@ -783,33 +809,6 @@
           <option value="Cellulit Expert Therapy">Cellulit Expert Therapy</option>
         </select>
       </p>
-
-      <!-- =========== WYBÓR PARTII CIAŁA - RADIO BUTTONY =========== -->
-      <p class="form-field">
-  <label>Wybierz partie ciała (możesz zaznaczyć kilka)</label>
-  <div class="radio-list">
-    <label>
-      <input type="checkbox" name="Partie ciała" value="Brzuch">
-      Brzuch
-    </label>
-    <label>
-      <input type="checkbox" name="Partie ciała" value="Uda">
-      Uda
-    </label>
-    <label>
-      <input type="checkbox" name="Partie ciała" value="Pośladki">
-      Pośladki
-    </label>
-    <label>
-      <input type="checkbox" name="Partie ciała" value="Ramiona">
-      Ramiona
-    </label>
-    <label>
-      <input type="checkbox" name="Partie ciała" value="Boki (boczki)">
-      Boki (boczki)
-    </label>
-  </div>
-</p>
       <p>
         <button type="submit">Wyślij Rezerwację</button>
       </p>
@@ -819,20 +818,59 @@
     </p>
   </section>
 
-  <!-- =========== SEKCJA O YASUMI =========== -->
-  <section class="o-yasumi-section" style="max-width: 800px; margin: 40px auto; text-align: center;">
+  <!-- =========== NOWY OPIS O YASUMI =========== -->
+  <section class="o-yasumi-section">
+    <!-- Obrazek przed opisem -->
+    <img 
+      src="https://res.cloudinary.com/dfbadk2ch/image/upload/v1738693856/umytvkwk3upsysazxcu0.png" 
+      alt="Yasumi Instytut Zdrowia i Urody w Ząbkach" 
+      style="max-width: 500px; margin-bottom: 20px;"
+    >
+
     <h2>Yasumi Instytut Zdrowia i Urody w Ząbkach – Twoje miejsce piękna i relaksu</h2>
-    <p style="text-align: center;">
-      Pomagamy zabieganym kobietom odkryć sekret jędrnej skóry i smukłej sylwetki, 
-      aby mogły zachwycać swoim wyglądem każdego dnia. W Yasumi Ząbki dbamy o to, 
-      by efekty naszych zabiegów były widoczne szybko, a jednocześnie nie wymagały 
-      inwestowania dużych sum pieniędzy ani poświęcania wielu godzin w salonie.
+    <p>
+      Pomagamy zabieganym kobietom odkryć sekret jędrnej skóry i smukłej sylwetki, aby mogły zachwycać swoim wyglądem każdego dnia. 
+      W Yasumi Ząbki dbamy o to, by efekty naszych zabiegów były widoczne szybko, a jednocześnie nie wymagały inwestowania dużych sum 
+      pieniędzy ani poświęcania wielu godzin w salonie.
     </p>
-    <!-- Reszta opisu, jeśli potrzebne -->
+
+    <h3>Dlaczego Yasumi Ząbki?</h3>
+    <p>
+      To nie tylko miejsce, to filozofia, która stawia na połączenie najnowszych technologii w medycynie estetycznej 
+      z indywidualnym podejściem do każdej klientki. Jesteśmy dumni z naszej oferty autorskich zabiegów, 
+      które łączą skuteczność, bezpieczeństwo i komfort – wszystko po to, abyś mogła poczuć się wyjątkowo.
+    </p>
+
+    <h3>Czym się wyróżniamy?</h3>
+    <ul style="text-align: left; max-width: 700px; margin: 0 auto;">
+      <li><strong>Profesjonalizm i doświadczenie</strong> – Nasz zespół to wykwalifikowani specjaliści, którzy nieustannie podnoszą swoje kompetencje.</li>
+      <li><strong>Najwyższa jakość usług</strong> – Wykorzystujemy wyselekcjonowane kosmetyki oraz urządzenia medyczne najwyższej klasy.</li>
+      <li><strong>Przyjazna atmosfera</strong> – Każda wizyta to chwila relaksu w miejscu, które emanuje ciepłem i troską.</li>
+    </ul>
+
+    <h3>Dla kobiet, które cenią swój czas i piękno</h3>
+    <p>
+      Jeśli jesteś kobietą, która:
+      <br>• Ceni profesjonalizm i skuteczność,
+      <br>• Szuka miejsca, gdzie piękno łączy się z relaksem,
+      <br>• Chce zadbać o siebie bez poświęcania wielu godzin i nadmiernych wydatków – 
+      Yasumi Ząbki jest dla Ciebie!
+    </p>
+
+    <p>
+      Odkryj nasz świat, gdzie Twoje piękno jest naszą misją. 
+      Dołącz do grona naszych zadowolonych klientek, które każdego dnia zachwycają jędrną skórą, 
+      smukłą sylwetką i pewnością siebie.
+    </p>
+
+    <p style="font-weight: 600; margin-top: 10px;">
+      Yasumi Ząbki – piękno na wyciągnięcie ręki.<br>
+      Zaufaj nam, a poczujesz, że jesteś w najlepszych rękach.
+    </p>
   </section>
 </main>
 
-<!-- =========== KARUZELA ZDJĘĆ =========== -->
+<!-- =========== KARUZELA ZDJĘĆ (NA KOŃCU) =========== -->
 <section class="carousel-section">
   <h2>Galeria</h2>
   <div class="carousel-container">
@@ -927,12 +965,12 @@
   prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
   nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
 
-  // Automatyczna zmiana slajdów
+  // Automatyczna zmiana slajdów co 4 sekundy
   let autoSlide = setInterval(() => {
     goToSlide(currentIndex + 1);
   }, 4000);
 
-  // Pauza, gdy kursor jest na karuzeli
+  // Pauza, gdy kursor najeżdża na karuzelę
   track.addEventListener('mouseenter', () => clearInterval(autoSlide));
   track.addEventListener('mouseleave', () => {
     autoSlide = setInterval(() => {
@@ -943,6 +981,7 @@
 
 </body>
 </html>
+
 
 
 
