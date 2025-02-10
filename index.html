@@ -36,7 +36,6 @@
       background: #fff;
       line-height: 1.6;
     }
-    /* Tekst wyśrodkowany globalnie w paragrafach i listach (możesz zmienić na justify) */
     p, li {
       text-align: center;
     }
@@ -776,6 +775,20 @@
     <a href="#form-box" class="btn-primary">Przejdź do Formularza Rezerwacji</a>
   </section>
 
+  <!-- =========== KRÓTKI OPIS ZABIEGÓW PRZED FORMULARZEM =========== -->
+  <section style="max-width: 800px; margin: 40px auto; text-align: center;">
+    <h2>Krótki opis zabiegów</h2>
+    <p>
+      <strong>CelluFree Manual (SILVER):</strong> Intensywny masaż manualny przy użyciu zaawansowanych technik, który skutecznie redukuje cellulit i poprawia napięcie skóry.
+    </p>
+    <p>
+      <strong>Cellulit Stop Therapy (GOLD):</strong> Połączenie masażu antycellulitowego z masażem wałkiem drewnianym, zapewniające wyraźne wygładzenie skóry i modelowanie sylwetki.
+    </p>
+    <p>
+      <strong>Cellulit Expert Therapy (PLATINUM):</strong> Kompleksowa terapia 3w1 (manual, LIPOZERO i bandaże), pozwalająca uzyskać maksymalną redukcję cellulitu oraz jędrną, elastyczną skórę.
+    </p>
+  </section>
+
   <!-- =========== FORMULARZ =========== -->
   <section class="form-section" id="form-box">
     <h2>Formularz Rezerwacji</h2>
@@ -809,6 +822,17 @@
           <option value="Cellulit Expert Therapy">Cellulit Expert Therapy</option>
         </select>
       </p>
+
+      <!-- Zamiast każdego obszaru ciała, zostawiamy 2 opcje -->
+      <p class="form-field">
+        <label for="bodyPartsSelect">Wybór partii ciała</label>
+        <select id="bodyPartsSelect" name="Partie ciała" required>
+          <option value="">--Wybierz opcję--</option>
+          <option value="Uda + Pośladki">Uda + Pośladki</option>
+          <option value="Uda + Pośladki + Brzuch">Uda + Pośladki + Brzuch</option>
+        </select>
+      </p>
+
       <p>
         <button type="submit">Wyślij Rezerwację</button>
       </p>
@@ -834,6 +858,7 @@
       pieniędzy ani poświęcania wielu godzin w salonie.
     </p>
 
+    <!-- Poniżej "całą resztę" pozostawiamy bez zmian -->
     <h3>Dlaczego Yasumi Ząbki?</h3>
     <p>
       To nie tylko miejsce, to filozofia, która stawia na połączenie najnowszych technologii w medycynie estetycznej 
@@ -981,6 +1006,7 @@
 
 </body>
 </html>
+
 
 
 
